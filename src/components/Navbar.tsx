@@ -11,10 +11,10 @@ export default function Navbar() {
       <div className="nav-inner">
         <a href="#" className="logo logo-img-wrap" aria-label="Logoamerica.us — home">
           <Image
-            src="/logo_america_2.png"
+            src="/Logo-new.png"
             alt="LogoAmerica"
             width={168}
-            height={42}
+            height={92}
             className="logo-img"
             priority
           />

@@ -275,7 +275,7 @@ header.nav {
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 32px; max-width: var(--maxw); margin: 0 auto;
+ max-width: var(--maxw); margin: 0 auto;
 }
 .logo {
   font-family: var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
@@ -285,7 +285,7 @@ header.nav {
   letter-spacing: -0.02em;
 }
 .logo-img-wrap { display: flex; align-items: center; }
-.logo-img { display: block; height: 75px; width: auto; border-radius: 6px; }
+.logo-img { display: block; height: 100px; width: auto; border-radius: 6px; }
 .logo-img-footer { height: 90px; width: auto; }
 .footer-email-phone{
   display: flex;

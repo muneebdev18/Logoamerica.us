@@ -798,7 +798,6 @@ header.nav {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 18px 32px;
   display: flex;
 }
 
@@ -820,7 +819,7 @@ header.nav {
 .logo-img {
   border-radius: 6px;
   width: auto;
-  height: 75px;
+  height: 100px;
   display: block;
 }
 
