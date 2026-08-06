@@ -56,7 +56,7 @@ export default function Pricing() {
               <a href="#contact" className={`btn ${plan.popular ? "lead-submit" : "btn-ghost"}`}>Order Now</a>
               <div className="price-contact">
                 <a href="tel:+13153550142" className="price-contact-item">
-                  <PhoneIcon />+1 (315) 555-0142
+                  <PhoneIcon />+1 (281) 953 9004
                 </a>
                 <span className="price-contact-divider">|</span>
                 <a href="#contact" className="price-contact-item">

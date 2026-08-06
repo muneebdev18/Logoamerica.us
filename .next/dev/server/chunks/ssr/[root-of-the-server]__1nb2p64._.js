@@ -1600,7 +1600,7 @@ function Pricing() {
                                                         lineNumber: 59,
                                                         columnNumber: 19
                                                     }, this),
-                                                    "+1 (315) 555-0142"
+                                                    "+1 (281) 953 9004"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Pricing.tsx",
