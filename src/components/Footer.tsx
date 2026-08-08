@@ -51,8 +51,9 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Support</h5>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/cookie-policy">Cookie Policy</a></li>
+              <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
             </ul>
           </div>
         </div>
@@ -88,9 +89,9 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">Terms &amp; Conditions</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+            <a href="/terms-and-conditions">Terms &amp; Conditions</a>
           </div>
           {/* <div className="footer-social">
             <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="1" /></svg></a>
