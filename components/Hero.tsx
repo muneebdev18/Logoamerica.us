@@ -217,7 +217,7 @@ export default function Hero() {
       />
 
       <div ref={contentRef} className="shell relative z-10 flex flex-col gap-6 pb-10 pt-8 sm:gap-8 sm:pb-14 sm:pt-36 md:pt-40 md:pb-20">
-        <p data-fade-up className="eyebrow">
+        <p data-fade-up className="eyebrow hidden sm:block">
           Logo &amp; brand identity studio · Est. NYC ⟶ LA
         </p>
 

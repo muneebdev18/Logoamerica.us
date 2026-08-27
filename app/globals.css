@@ -443,8 +443,8 @@ body {
 /* Ensure tap targets are accessible */
 @media (pointer: coarse) {
   a, button, [role="button"], input, select, textarea {
-    min-height: 44px;
-    min-width: 44px;
+    /* min-height: 44px;
+    min-width: 44px; */
   }
 }
 

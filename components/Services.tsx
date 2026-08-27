@@ -63,7 +63,7 @@ export default function Services() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="services" className="relative scroll-mt-20 py-20 sm:py-28 md:py-40">
+    <section id="services" className="relative scroll-mt-20 py-12 sm:py-20">
       <div className="shell flex flex-col gap-12 sm:gap-16">
         <div className="grid gap-10 sm:gap-14 lg:grid-cols-2 lg:gap-20">
           <SectionHeading

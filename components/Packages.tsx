@@ -5,7 +5,7 @@ import { TIERS, ADDONS, FAQS } from "@/lib/data";
 
 export default function Packages() {
   return (
-    <section id="packages"       className="relative scroll-mt-20 py-24 sm:py-32 md:py-40">
+    <section id="packages" className="relative scroll-mt-20 py-12 sm:py-20">
       {/* ambient glow */}
       <div
         aria-hidden="true"
@@ -23,7 +23,7 @@ export default function Packages() {
 
         {/* Mobile: horizontal scroll carousel */}
         <div className="xl:hidden">
-          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 -mx-6 px-6 scrollbar-none" style={{ WebkitOverflowScrolling: "touch" }}>
+          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6  px-6 scrollbar-none" style={{ WebkitOverflowScrolling: "touch" }}>
             {TIERS.map((tier) => (
               <article
                 key={tier.name}
@@ -34,7 +34,7 @@ export default function Packages() {
                 }`}
               >
                 {tier.featured && (
-                  <span className="absolute -top-3 left-6 rounded-full bg-taillight px-3 py-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white shadow-[0_8px_24px_-6px_rgba(255,64,48,0.7)]">
+                  <span className="absolute hidden sm:block -top-3 left-6 rounded-full bg-taillight px-3 py-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white shadow-[0_8px_24px_-6px_rgba(255,64,48,0.7)]">
                     Most driven
                   </span>
                 )}
@@ -185,7 +185,7 @@ export default function Packages() {
         </div> */}
 
         {/* FAQ */}
-        <Reveal className="mx-auto w-full max-w-3xl">
+        <Reveal className="mx-auto w-full max-w-3xl pt-12 sm:pt-20">
           <h3 className="eyebrow mb-6">Before you ask</h3>
           <div className="flex flex-col divide-y divide-hairline rounded-2xl border border-hairline bg-deep/40">
             {FAQS.map((faq) => (

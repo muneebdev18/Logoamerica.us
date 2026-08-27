@@ -52,7 +52,7 @@ export default function Testimonials() {
             &ldquo;
           </span>
 
-          <div className="-mt-3 min-h-[160px] sm:-mt-6 sm:min-h-[180px] md:min-h-[150px]" aria-live="polite">
+          <div className="-mt-3 min-h-[160px] sm:w-[60%] sm:-mt-6 sm:min-h-[180px] md:min-h-[150px]" aria-live="polite">
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={index}
@@ -96,9 +96,9 @@ export default function Testimonials() {
                   aria-selected={i === index}
                   aria-label={`Testimonial from ${item.name}`}
                   onClick={() => go(i)}
-                  className={`h-2 rounded-full transition-all duration-500 ${
+                  className={`h-1 rounded-full transition-all duration-500 ${
                     i === index ? "w-8 bg-taillight" : "w-2 bg-hairline hover:bg-asphalt"
-                  } min-w-[20px]`}
+                  } ]`}
                 />
               ))}
             </div>

@@ -3,7 +3,7 @@ import ContactForm from "./contact/ContactForm";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative scroll-mt-20 overflow-hidden py-20 sm:py-28 md:py-40">
+    <section id="contact" className="relative scroll-mt-20 overflow-hidden py-12 sm:py-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[320px] sm:h-[420px] bg-[radial-gradient(ellipse_at_bottom,rgba(255,64,48,0.14),transparent_65%)]"
@@ -12,7 +12,7 @@ export default function Contact() {
       <div className="shell relative grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col gap-4 sm:gap-6">
           <Reveal>
-            <p className="eyebrow">Exit 06 — Final destination</p>
+            <p className="eyebrow">Final destination</p>
             <h2 className="display-lg mt-3 sm:mt-4 max-w-[12ch]">
               Start your mark<span className="text-taillight">.</span>
             </h2>

@@ -90,7 +90,7 @@ export default function Process() {
     <section
       id="process"
       ref={sectionRef}
-      className="relative scroll-mt-20 py-20 sm:py-28 md:py-40"
+      className="relative scroll-mt-20 py-12 sm:py-20"
     >
       <div className="shell flex flex-col gap-12 sm:gap-16">
         <SectionHeading

@@ -47,7 +47,7 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="group font-mono text-[11px] uppercase tracking-[0.2em] text-asphalt transition-colors hover:text-moonlight"
+                className="group font-bold text-[13px] uppercase tracking-[0.2em] text-asphalt transition-colors hover:text-moonlight"
               >
                 {/* <span className="mr-1.5 text-centerline/70">{link.exit}</span> */}
                 {link.label}
@@ -105,7 +105,7 @@ export default function Nav() {
                   transition={{ delay: 0.08 + i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="flex items-baseline gap-4 border-b border-hairline py-5"
                 >
-                  <span className="font-mono text-xs text-centerline">EXIT {link.exit}</span>
+                  
                   <span className="font-display text-3xl font-black uppercase tracking-tight text-moonlight">
                     {link.label}
                   </span>

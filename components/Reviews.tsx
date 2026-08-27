@@ -228,7 +228,7 @@ export default function Reviews() {
     <section
       id="reviews"
       aria-label="Agency reviews on trusted platforms"
-      className="relative scroll-mt-20 py-24 sm:py-32 md:py-40"
+      className="relative scroll-mt-20 py-12 sm:py-20"
     >
       <div className="shell flex flex-col items-center gap-10 sm:gap-14">
         <SectionHeading
@@ -302,7 +302,7 @@ export default function Reviews() {
         <div className="sm:hidden w-full">
           <div
             ref={scrollRef}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 -mx-6 px-6 scrollbar-none"
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4  px-6 scrollbar-none"
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             {PLATFORMS.map((platform) => (
