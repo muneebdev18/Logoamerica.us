@@ -47,6 +47,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Logo America" }],
   creator: "Logo America",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
