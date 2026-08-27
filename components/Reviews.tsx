@@ -374,7 +374,7 @@ export default function Reviews() {
 
         <Reveal delay={0.15}>
           <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-asphalt">
-            <span className="inline-block h-1.5 w-1.5 animate-blink rounded-full bg-centerline" />
+            {/* <span className="inline-block h-1.5 w-1.5 animate-blink rounded-full bg-centerline" /> */}
             120+ verified reviews · 4.8 average across platforms · Zero paid placements
           </p>
         </Reveal>

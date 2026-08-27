@@ -186,8 +186,15 @@ export default function Packages() {
 
         {/* FAQ */}
         <Reveal className="mx-auto w-full max-w-3xl pt-12 sm:pt-20">
-          <h3 className="eyebrow mb-6">Before you ask</h3>
-          <div className="flex flex-col divide-y divide-hairline rounded-2xl border border-hairline bg-deep/40">
+          {/* <h3 className="eyebrow mb-6">Before you ask</h3> */}
+          <SectionHeading
+          exit="05"
+          eyebrow="Before you ask"
+          align="center"
+          lines={["Frequently Asked Questions"]}
+          lead=""
+        />
+          <div className="flex mt-15 mx-auto w-full sm:w-[70%] flex-col divide-y divide-hairline rounded-2xl border border-hairline bg-deep/40">
             {FAQS.map((faq) => (
               <details key={faq.q} className="group px-5 py-5 sm:px-6 sm:py-6 [&_summary]:list-none">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-left font-medium text-moonlight marker:hidden text-base">

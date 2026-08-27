@@ -255,7 +255,7 @@ export default function Hero() {
           className="flex items-center justify-between border-t border-hairline pt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-asphalt"
         >
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 animate-blink rounded-full bg-centerline" />
+            {/* <span className="inline-block h-1.5 w-1.5 animate-blink rounded-full bg-centerline" /> */}
             Scroll · Mile 0000
           </span>
           <span className="hidden sm:block">140+ marks in the wild</span>
