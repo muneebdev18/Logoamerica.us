@@ -31,9 +31,9 @@ export default function Nav() {
           scrolled
             ? "border-b border-hairline bg-midnight/80 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
-        } safe-area-top`}
+        }`}
       >
-        <div className="shell flex h-16 items-center justify-between mt-8 sm:mt-2 md:h-20 pt-safe">
+        <div className="shell flex h-16 items-center justify-between mt-8 sm:mt-2 md:h-20 pt-safe safe-area-top">
           <a
             href="#top"
             className="group flex items-center gap-2.5"

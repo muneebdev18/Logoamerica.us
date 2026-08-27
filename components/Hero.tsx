@@ -204,7 +204,7 @@ export default function Hero() {
     <section
       id="top"
       ref={rootRef}
-      className="relative flex min-h-[90svh] sm:min-h-[100svh] flex-col justify-end overflow-hidden"
+      className="relative flex min-h-[90svh] mt-[140px] sm:mt-0 sm:min-h-[100svh] flex-col justify-end overflow-hidden"
     >
       <canvas
         ref={canvasRef}
@@ -216,7 +216,7 @@ export default function Hero() {
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,#0a1220_92%)]"
       />
 
-      <div ref={contentRef} className="shell relative z-10 flex flex-col gap-6 pb-10 pt-8 sm:gap-8 sm:pb-14 sm:pt-36 md:pt-40 md:pb-20">
+      <div ref={contentRef} className="shell relative z-10 flex flex-col gap-6 pb-10 pt-24 sm:gap-8 sm:pb-14 sm:pt-36 md:pt-40 md:pb-20 safe-area-top">
         <p data-fade-up className="eyebrow hidden sm:block">
           Logo &amp; brand identity studio · Est. NYC ⟶ LA
         </p>
