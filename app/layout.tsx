@@ -60,6 +60,14 @@ export const metadata: Metadata = {
     title: "Logo America — We Design the Marks America Runs On",
     description:
       "Brand identity studio crafting distinctive logos and identity systems. NYC → LA, and everywhere between.",
+    images: [
+      {
+        url: "/logo-hz.png",
+        width: 1200,
+        height: 630,
+        alt: "Logo America — Brand Identity Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
