@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Footer sitemap" className="sm:col-span-1 md:col-span-2">
-          <h3 className="eyebrow mb-4 sm:mb-5">Exits</h3>
+          <h3 className="eyebrow mb-4 sm:mb-5">Quick Links</h3>
           <ul className="flex flex-col gap-3">
             {[...NAV_LINKS, { label: "Contact", href: "#contact", exit: "06" }].map((link) => (
               <li key={link.href}>
@@ -119,7 +119,7 @@ export default function Footer() {
         </nav>
 
         <nav aria-label="Services" className="sm:col-span-1 md:col-span-3">
-          <h3 className="eyebrow mb-4 sm:mb-5">Lanes</h3>
+          <h3 className="eyebrow mb-4 sm:mb-5">Services</h3>
           <ul className="flex flex-col gap-3">
             {SERVICES.map((s) => (
               <li key={s.index}>

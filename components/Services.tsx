@@ -88,9 +88,9 @@ export default function Services() {
                   <span className="font-mono text-xs tracking-[0.2em] text-centerline">
                     /{service.index}
                   </span>
-                  <span className="transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  {/* <span className="transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
                     <ServiceIcon index={service.index} />
-                  </span>
+                  </span> */}
                 </div>
                 <div>
                   <h3 className="display-md text-2xl sm:text-3xl mb-3 text-moonlight">{service.title}</h3>
