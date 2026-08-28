@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const STEP_LABELS = ["About you", "The mark", "Investment"] as const;
+const STEP_LABELS = ["About you", "The mark"] as const;
 
 const SERVICE_OPTIONS = [
   "Logo design",
@@ -37,8 +37,8 @@ export const INITIAL_FIELDS: Fields = {
   budget: "$5k – $15k",
 };
 
-export const STEP_COUNT = 3;
-export { STEP_LABELS, SERVICE_OPTIONS, TIMELINES, BUDGETS };
+export const STEP_COUNT = 2;
+export { STEP_LABELS, SERVICE_OPTIONS, TIMELINES };
 
 export const slide = {
   enter: (dir: number) => ({ opacity: 0, x: dir * 48 }),
@@ -102,7 +102,7 @@ export function useFormState() {
     }
     setError("");
     setDir(1);
-    setStep((v) => Math.min(2, v + 1));
+    setStep((v) => Math.min(1, v + 1));
   };
 
   const back = () => {

@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import {
-  BUDGETS,
   SERVICE_OPTIONS,
   TIMELINES,
   slide,
@@ -52,7 +51,7 @@ export default function ContactForm() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (step !== 2 || !armed || sending) return;
+        if (step !== 1 || !armed || sending) return;
         const honeypot =
           (e.currentTarget.elements.namedItem("companyWebsite") as HTMLInputElement)?.value ?? "";
         void form.submit(honeypot);
@@ -74,8 +73,8 @@ export default function ContactForm() {
       />
       {/* Step indicator */}
       <div className="flex flex-col gap-3.5">
-        <div className="flex items-center justify-between">
-          {["About you", "The mark", "Investment"].map((label, i) => (
+        <div className="flex items-center justify-around">
+                      {["About you", "The mark"].map((label, i) => (
             <button
               key={label}
               type="button"
@@ -107,7 +106,7 @@ export default function ContactForm() {
           <motion.div
             className="h-full origin-left bg-gradient-to-r from-taillight to-centerline"
             initial={false}
-            animate={{ scaleX: (step + 1) / 3 }}
+            animate={{ scaleX: (step + 1) / 2 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           />
         </div>
@@ -244,59 +243,6 @@ export default function ContactForm() {
             </motion.div>
           )}
 
-          {step === 2 && (
-            <motion.div
-              key="step-2"
-              custom={dir}
-              variants={slide}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={slideTransition}
-              className="absolute inset-0 flex flex-col gap-5"
-            >
-              <p className="text-[15px] leading-relaxed text-asphalt/90">
-                Last stop — a rough budget keeps everyone honest.
-              </p>
-              <fieldset>
-                <legend className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-moonlight/65">
-                  Budget range
-                </legend>
-                <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-                  {BUDGETS.map((b) => (
-                    <motion.button
-                      key={b}
-                      type="button"
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => form.set("budget", b)}
-                      aria-pressed={fields.budget === b}
-                      className={`rounded-xl border px-3 py-4 font-mono text-[10px] font-semibold uppercase tracking-wide transition-all duration-300 min-h-[44px] ${
-                        fields.budget === b
-                          ? "border-taillight bg-taillight/15 text-moonlight shadow-[0_0_20px_-6px_rgba(255,64,48,0.6)]"
-                          : "border-asphalt/20 bg-white/[0.03] text-asphalt hover:border-asphalt/45 hover:bg-white/[0.06] hover:text-moonlight"
-                      }`}
-                    >
-                      {b}
-                    </motion.button>
-                  ))}
-                </div>
-              </fieldset>
-              <div className="rounded-2xl border border-asphalt/[0.14] bg-white/[0.04] p-4">
-                <p className="mb-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-moonlight/55">
-                  Your brief so far
-                </p>
-                <p className="text-xs leading-relaxed text-moonlight/85">
-                  {fields.name || "—"} · {fields.email || "—"}
-                  <br />
-                  {form.summary}
-                </p>
-              </div>
-              <p className="text-[11px] leading-relaxed text-asphalt/70">
-                No newsletters, no drip campaigns — just a reply from a partner
-                within one business day.
-              </p>
-            </motion.div>
-          )}
         </AnimatePresence>
       </div>
 
@@ -316,7 +262,7 @@ export default function ContactForm() {
         )}
       </AnimatePresence>
 
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-3 mt-18">
         <button
           type="button"
           onClick={form.back}
@@ -324,7 +270,7 @@ export default function ContactForm() {
         >
           ← Back
         </button>
-        {step < 2 ? (
+        {step < 1 ? (
           <button type="button" onClick={form.next} className="btn btn-primary !py-4">
             Continue
             <span aria-hidden="true">→</span>
