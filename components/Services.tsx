@@ -69,13 +69,11 @@ export default function Services() {
           <SectionHeading
             exit="01"
             eyebrow="Services"
-            lines={["A mark","needs to live."]}
+            lines={["Logo Design & Branding","for Texas Businesses."]}
           />
           <Reveal delay={0.1} className="self-end">
             <p className="text-lg leading-relaxed text-moonlight md:text-xl lg:text-2xl">
-              Six disciplines, one senior team. No handoffs between studios, no
-              telephone game — the people who plan your identity are the people
-              who draw it.
+            From a single logo to a full rebrand, our Texas-based team handles your entire brand identity in-house. No outsourcing or overseas handoffs—just senior designers delivering work built to stand out anywhere
             </p>
           </Reveal>
         </div>
