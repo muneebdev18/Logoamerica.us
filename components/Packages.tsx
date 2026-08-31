@@ -204,7 +204,7 @@ export default function Packages() {
         </div>
 
         {/* FAQ */}
-        <Reveal className="mx-auto w-full max-w-3xl pt-12 sm:pt-20">
+        {/* <Reveal className="mx-auto w-full max-w-3xl pt-12 sm:pt-20">
           <SectionHeading
             exit="05"
             eyebrow="Questions"
@@ -228,7 +228,7 @@ export default function Packages() {
               </details>
             ))}
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

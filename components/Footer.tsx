@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-hairline bg-deep">
       {/* CTA band */}
-      <div className="shell relative flex flex-col items-start justify-between gap-6 sm:gap-8 border-b border-hairline py-16 sm:py-20 md:py-28 lg:flex-row lg:items-center">
+      {/* <div className="shell relative flex flex-col items-start justify-between gap-6 sm:gap-8 border-b border-hairline py-16 sm:py-20 md:py-28 lg:flex-row lg:items-center">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-24 top-0 h-full w-[420px] bg-taillight/[0.07] blur-[100px]"
@@ -50,7 +50,7 @@ export default function Footer() {
             Limited Q4 capacity · Reply in 1 business day
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Link grid */}
       <div className="shell grid gap-10 sm:gap-12 py-14 sm:py-16 md:grid-cols-12">
