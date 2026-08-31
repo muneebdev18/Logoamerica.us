@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Magnetic from "./Magnetic";
 import { NAV_LINKS } from "@/lib/data";
 import { lockScroll, unlockScroll } from "@/lib/scrollLock";
+import { Phone } from "lucide-react";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,6 +57,16 @@ export default function Nav() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <a
+              href="tel:+12819539004"
+              className="hidden lg:flex items-center gap-2 font-mono text-[14px] text-asphalt transition-colors hover:text-centerline"
+              aria-label="Call us"
+            >
+              <span aria-hidden="true">
+                <Phone/>
+              </span>
+              <span>281 953 9004</span>
+            </a>
             <Magnetic strength={0.25}>
               <a href="#contact" className="btn btn-primary hidden !py-3 !px-6 sm:inline-flex">
                 Start your mark
@@ -118,6 +129,14 @@ export default function Nav() {
               transition={{ delay: 0.4 }}
               className="flex flex-col gap-4"
             >
+              <a
+                href="tel:+12819539004"
+                className="flex items-center justify-center gap-2 font-mono text-[14px] text-asphalt transition-colors hover:text-centerline py-2"
+                aria-label="Call us"
+              >
+                <span aria-hidden="true">☎</span>
+                <span>281 953 9004</span>
+              </a>
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}

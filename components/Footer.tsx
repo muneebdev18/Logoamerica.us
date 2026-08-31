@@ -62,6 +62,14 @@ export default function Footer() {
           <p className="max-w-xs text-sm leading-relaxed text-asphalt">
             The brand identity studio behind logos that work everywhere — from app icons to billboards, for the next twenty years.
           </p>
+          <div className="flex flex-col gap-2 mt-4 font-mono text-[12px] text-asphalt">
+            <a href="tel:+12819539004" className="flex items-center gap-2 transition-colors hover:text-centerline">
+              <span aria-hidden="true">☎</span>
+              <span>281 953 9004</span>
+            </a>
+            <span>New York, NY · Los Angeles, CA</span>
+            <span>Mon–Fri · 9–6 ET / 9–6 PT</span>
+          </div>
           <div className="max-w-xs">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-asphalt">
               Monthly insights — one email, no spam
@@ -117,6 +125,26 @@ export default function Footer() {
           </ul>
         </nav>
 
+        <nav aria-label="Legal" className="sm:col-span-1 md:col-span-2">
+          <h3 className="eyebrow mb-4 sm:mb-5">Legal</h3>
+          <ul className="flex flex-col gap-3">
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Refund Policy", href: "/refund-policy" },
+              { label: "Terms & Conditions", href: "/terms-conditions" },
+            ].map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="group flex items-center gap-2 text-sm text-asphalt transition-colors hover:text-moonlight"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <nav aria-label="Services" className="sm:col-span-1 md:col-span-3">
           <h3 className="eyebrow mb-4 sm:mb-5">Services</h3>
           <ul className="flex flex-col gap-3">
@@ -130,7 +158,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2">
+        {/* <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2">
           <h3 className="eyebrow mb-4 sm:mb-5">Follow</h3>
           {["LinkedIn", "Instagram", "Dribbble", "Behance"].map((social) => (
             <a
@@ -148,13 +176,8 @@ export default function Footer() {
               </span>
             </a>
           ))}
-          {/* <a
-            href={`mailto:${SITE.email}`}
-            className="mt-3 break-all font-mono text-[11px] text-centerline transition-colors hover:text-tailglow"
-          >
-            {SITE.email}
-          </a> */}
-        </div>
+         
+        </div> */}
       </div>
 
       {/* Giant wordmark */}

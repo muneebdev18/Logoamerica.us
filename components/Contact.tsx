@@ -1,3 +1,4 @@
+import { Clock, MapPin, Phone, Send } from "lucide-react";
 import Reveal from "./Reveal";
 import ContactForm from "./contact/ContactForm";
 
@@ -25,16 +26,30 @@ export default function Contact() {
 
           <Reveal
             delay={0.1}
-            className="flex flex-col gap-2 sm:gap-2.5 font-mono text-[14px] sm:text-[16px] capitaize text-asphalt"
+            className="flex flex-col gap-[15px] sm:gap-2.5 font-mono text-[14px] sm:text-[16px] capitaize text-asphalt"
           >
             <a
               href="mailto:contact@logoamerica.us"
-              className="w-fit transition-colors hover:text-centerline"
+              className="w-fit transition-colors hover:text-centerline flex items-center gap-2"
             >
-              contact@logoamerica.us →
+              <Send />
+              <span>contact@logoamerica.us </span>
             </a>
+            <a
+              href="tel:+12819539004"
+              className="w-fit flex items-center gap-2 transition-colors hover:text-centerline"
+            >
+              <Phone />
+              <span>281 953 9004</span>
+            </a>
+            <div className="w-fit flex items-center gap-2">
+            <MapPin />
             <span>New York, NY · Los Angeles, CA</span>
+            </div>
+            <div className="w-fit flex items-center gap-2">
+            <Clock />
             <span>Mon–Fri · 9–6 ET / 9–6 PT</span>
+            </div>
           </Reveal>
 
           {/* <Reveal delay={0.15}>

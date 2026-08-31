@@ -14,6 +14,7 @@ import Packages from "@/components/Packages";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LeadModal from "@/components/LeadModal";
+// import AnnouncementBar from "@/components/AnnouncementBar";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -46,6 +47,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* <AnnouncementBar /> */}
       <Cursor />
       <Nav />
       <RouteRail />
