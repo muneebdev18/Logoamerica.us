@@ -5,99 +5,88 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Magnetic from "./Magnetic";
 
-const Star = ({ className = "" }: { className?: string }) => (
+const Star = ({ className = "", fill = "currentColor", stroke, strokeWidth }: { className?: string; fill?: string; stroke?: string; strokeWidth?: number }) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-    <path d="M12 1.8l3.02 6.36 6.98.88-5.14 4.83 1.32 6.93L12 17.4l-6.18 3.4 1.32-6.93L2 9.04l6.98-.88z" fill="currentColor" />
+    <path d="M12 1.8l3.02 6.36 6.98.88-5.14 4.83 1.32 6.93L12 17.4l-6.18 3.4 1.32-6.93L2 9.04l6.98-.88z" fill={fill} stroke={stroke} strokeWidth={strokeWidth} />
   </svg>
-);
-
-const GoogleG = () => (
-  <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-    <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z" />
-    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z" />
-    <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z" />
-    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z" />
-  </svg>
-);
-
-const TrustpilotLogo = () => (
-  <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-    <rect width="24" height="24" rx="5" fill="#00b67a" />
-    <path d="M12 4.6l1.92 4.05 4.44.55-3.27 3.07.84 4.41L12 14.51l-3.93 2.17.84-4.41-3.27-3.07 4.44-.55z" fill="#fff" />
-  </svg>
-);
-
-const ClutchLogo = () => (
-  <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-    <rect width="24" height="24" rx="5" fill="#ff3d2e" />
-    <path d="M17.4 15.1A6 6 0 116.6 8.9" fill="none" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" />
-    <circle cx="17.6" cy="8.6" r="1.9" fill="#fff" />
-  </svg>
-  // data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405.7 115"><circle cx="299.2" cy="75.3" r="13.3" fill="%23E62415"/><path fill="%2317313B" d="M105.6 0h17.6v113.5h-17.6V0zm81.7 78.5c0 17.6-14.4 19-18.8 19-11 0-12.6-10.3-12.6-16.5V37.1h-17.7v43.8c-.1 10.9 3 19.9 9 25.9a32.1 32.1 0 0040.1 2.1v4.6H205V37.1h-17.7v41.4zm55.9-67.1h-17.7v25.7h-12.3v16.7h12.3v59.7h17.7V53.8h14.5V37.1h-14.5V11.4zM315 91.8c-4 3.6-9.3 5.6-15.1 5.6a21.6 21.6 0 01-22.2-22.3c0-12.9 9.1-21.9 22.2-21.9 5.7 0 11.1 1.9 15.2 5.5l2.8 2.4 12.4-12.4-3.1-2.8a40.6 40.6 0 00-27.3-10.3c-23 0-39.7 16.6-39.7 39.4a39 39 0 0039.7 39.9c10.5 0 20.3-3.7 27.5-10.4l3-2.8-12.6-12.4-2.8 2.5zm81.7-48a32.1 32.1 0 00-40.1-2.1V0h-17.7v113.5h17.7V72.2c0-17.6 14.4-19 18.8-19 11 0 12.6 10.3 12.6 16.5v43.9h17.7V69.7a36 36 0 00-9-25.9zM79.5 86.3A36.7 36.7 0 0153 97.4c-20.5 0-35.4-16.1-35.4-38.2C17.6 37 32.5 20.9 53 20.9c9.9 0 19.3 3.9 26.4 11l2.8 2.8 12.3-12.3-2.7-2.8A54.2 54.2 0 0052.9 3.4C22.8 3.4 0 27.4 0 59.3 0 91 22.8 115 52.9 115c14.9 0 28.7-5.8 38.9-16.3l2.7-2.8-12.2-12.5-2.8 2.9z"/></svg>
-);
-
-const GoodFirmsLogo = () => (
-  <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-    <defs>
-      <linearGradient id="gf-g" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0%" stopColor="#0ba360" />
-        <stop offset="100%" stopColor="#3cba92" />
-      </linearGradient>
-    </defs>
-    <rect width="24" height="24" rx="5" fill="#0d2137" />
-    <path d="M6 17.2v-5.4" stroke="url(#gf-g)" strokeWidth="2.6" strokeLinecap="round" />
-    <path d="M10.6 17.2V8.6" stroke="url(#gf-g)" strokeWidth="2.6" strokeLinecap="round" />
-    <path d="M14.6 14.8l4.6-5" stroke="#ffb400" strokeWidth="2.2" strokeLinecap="round" />
-    <path d="M15.4 9h4.2v4.2" stroke="#ffb400" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const PlatformStars = ({ count = 5, color = "text-[#00b67a]" }: { count?: number; color?: string }) => (
-  <span className="flex items-center gap-0.5" aria-hidden="true">
-    {Array.from({ length: count }).map((_, i) => (
-      <Star key={i} className={`h-3.5 w-3.5 ${color}`} />
-    ))}
-  </span>
 );
 
 const TRUST_PLATFORMS = [
-  { name: "Trustpilot", score: "4.8", href: "https://www.trustpilot.com/review/logoamerica.agency", logo: <TrustpilotLogo />, stars: <PlatformStars color="text-[#00b67a]" /> },
-  { name: "Clutch", score: "4.9", href: "https://clutch.co/profile/logo-america", logo: <ClutchLogo />, stars: <PlatformStars color="text-[#ff3d2e]" /> },
-  { name: "GoodFirms", score: "4.8", href: "https://www.goodfirms.co/company/logo-america", logo: <GoodFirmsLogo />, stars: <PlatformStars color="text-[#ffb400]" /> },
-  // { name: "Google", score: "4.9", href: "https://www.google.com/search?q=logo+america+agency+reviews", logo: <GoogleG />, stars: <PlatformStars color="text-[#FBBC05]" /> },
+  { 
+    name: "Trustpilot", 
+    score: "5.0", 
+    href: "https://www.trustpilot.com/review/logoamerica.agency", 
+    logoSrc: "/Trustpilot.png",
+    color: "#00b67a" 
+  },
+  { 
+    name: "Clutch", 
+    score: "4.9", 
+    href: "https://clutch.co/profile/logo-america", 
+    logoSrc: "/Clutch.png",
+    color: "#ff3d2e" 
+  },
 ];
 
 function TrustBadges() {
   return (
-    <div
-      className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 p-6 md:p-8 pb-10 md:pb-14"
-      aria-label="Trusted platform ratings"
-    >
-      <div className="flex flex-wrap items-center gap-3 md:gap-4" data-fade-up>
-        {TRUST_PLATFORMS.map((platform) => (
-          <a
-            key={platform.name}
-            href={platform.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${platform.name} — ${platform.score} out of 5`}
-            className="group flex items-center gap-2.5 px-5 py-4 rounded-lg bg-midnight/60 border border-hairline/50 backdrop-blur-sm transition-all duration-400 hover:border-hairline hover:bg-midnight/80"
-          >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center">{platform.logo}</span>
-            <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className="font-display text-xs font-black text-moonlight">{platform.name}</span>
-              <div className="flex items-baseline gap-1">
-                {platform.stars}
+    <div className="relative z-10" data-fade-up>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pb-6 sm:pb-8">
+        {/* <span className=" font-mono text-[11px] uppercase tracking-[0.3em] text-centerline shrink-0 self-center sm:self-start">
+          Trusted by
+        </span> */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-5" role="list" aria-label="Platform ratings">
+          {TRUST_PLATFORMS.map((platform) => (
+            <a
+              key={platform.name}
+              href={platform.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${platform.name} — ${platform.score} out of 5 stars`}
+              className="group flex items-center gap-2.5 shrink-0 rounded-xl bg-midnight/50 border border-hairline/40 px-3 py-2.5 sm:px-4 sm:py-3 transition-all duration-300 hover:border-hairline hover:bg-midnight/70 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-taillight"
+            >
+              <img
+                src={platform.logoSrc}
+                alt=""
+                className="h-[50px] w-auto  "
+                loading="lazy"
+              />
+              <div className="hidden sm:flex flex-col items-start leading-[1.1]">
+                <span className="font-display text-[17px] font-medium text-moonlight">{platform.name}</span>
+                <div className="flex items-center gap-0.5">
+                  <span className="font-display text-[15px] font-black tabular-nums text-moonlight">{platform.score}</span>
+                  <span className="flex items-center gap-0.5" aria-hidden="true">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-3 w-3"
+                        fill={i < Math.floor(Number(platform.score)) ? platform.color : "transparent"}
+                        stroke={i < Math.floor(Number(platform.score)) ? "none" : platform.color}
+                        strokeWidth={1.5}
+                      />
+                    ))}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="sm:hidden flex items-center gap-1.5">
-              <span className="font-display text-sm font-black tabular-nums text-moonlight">{platform.score}</span>
-              {platform.stars}
-            </div>
-          </a>
-        ))}
+              <div className="sm:hidden flex items-center gap-1.5">
+                <span className="font-display text-sm font-black tabular-nums text-moonlight">{platform.score}</span>
+                <span className="flex items-center gap-0.5" aria-hidden="true">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-12 w-12"
+                      fill={i < Math.floor(Number(platform.score)) ? platform.color : "transparent"}
+                      stroke={i < Math.floor(Number(platform.score)) ? "none" : platform.color}
+                      strokeWidth={1.5}
+                    />
+                  ))}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
-     
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-deep to-transparent pointer-events-none" aria-hidden="true" />
     </div>
   );
 }
@@ -343,7 +332,9 @@ export default function Hero() {
               </a>
             </Magnetic>
           </div>
+          
         </div>
+        <TrustBadges />
 
         {/* <div
           data-fade-up
@@ -358,7 +349,6 @@ export default function Hero() {
         </div> */}
       </div>
 
-      <TrustBadges />
     </section>
   );
 }

@@ -40,7 +40,6 @@ export default function Work() {
         },
       });
 
-      // Parallax: art drifts inside each panel as it crosses the viewport
       gsap.utils.toArray<HTMLElement>("[data-art]").forEach((art) => {
         gsap.fromTo(
           art,
@@ -58,7 +57,6 @@ export default function Work() {
           }
         );
       });
-      // Ghost index numbers drift slower
       gsap.utils.toArray<HTMLElement>("[data-ghost]").forEach((ghost) => {
         gsap.fromTo(
           ghost,
@@ -116,14 +114,13 @@ export default function Work() {
           <SectionHeading
             exit="02"
             eyebrow="Selected Work"
-            lines={["Case studies from", "recent partnerships."]}
+            lines={["Portfolio of", "recent partnerships."]}
           />
           <p className="hidden max-w-xs text-sm leading-relaxed text-asphalt lg:block">
             Four brands, four industries — measured by what happened after launch.
           </p>
         </div>
 
-        {/* horizontal progress */}
         <div className="hidden h-px w-full bg-hairline lg:block">
           <div
             ref={progressRef}
@@ -135,46 +132,54 @@ export default function Work() {
 
       <div
         ref={trackRef}
-        className="mt-10 flex flex-col gap-12 sm:mt-14 sm:gap-16 md:gap-20 lg:mt-4 lg:flex-row lg:items-stretch lg:gap-10 lg:pl-[max(3.5rem,calc((100vw-84rem)/2+3.5rem))] lg:pr-24 px-5 sm:px-0"
+        className="mt-10 flex flex-col gap-8 sm:mt-12 sm:gap-10 lg:mt-0 lg:flex-row lg:items-stretch lg:gap-8 lg:px-5 lg:pl-[max(3.5rem,calc((100vw-84rem)/2+3.5rem))] lg:pr-24"
       >
         {PROJECTS.map((project, i) => (
           <article
             key={project.client}
-            className="group relative flex shrink-0 flex-col gap-6 sm:gap-8 lg:w-[58vw] lg:max-w-[860px] lg:flex-row lg:items-center lg:gap-10"
+            className="group relative flex shrink-0 flex-col gap-6 lg:w-[380px] lg:max-w-[440px] lg:flex-col"
           >
-            {/* ghost number */}
             <span
               aria-hidden="true"
               data-ghost
-              className="pointer-events-none absolute -top-10 left-5 z-0 select-none font-display text-[5rem] sm:text-[7rem] leading-none text-outline-faint opacity-30 lg:-left-10 lg:top-1/2 lg:-translate-y-1/2 lg:text-[16rem] lg:opacity-60"
+              className="pointer-events-none absolute -top-10 left-4 z-0 select-none font-display text-[4rem] sm:text-[6rem] leading-none text-outline-faint opacity-30 lg:-left-10 lg:top-1/2 lg:-translate-y-1/2 lg:text-[14rem] lg:opacity-50"
             >
               {String(i + 1).padStart(2, "0")}
             </span>
 
-            {/* art */}
             <a
               href="#contact"
               aria-label={`${project.client} case study`}
-              className="relative z-10 block overflow-hidden rounded-3xl border border-hairline lg:w-[55%]"
+              className="relative z-10 group overflow-hidden rounded-3xl border border-hairline bg-deep w-full aspect-[3/4] lg:aspect-[4/5] transition-all duration-500 hover:border-centerline/30 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.4)]"
             >
-              <div className=" w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-                <div data-art className="h-full w-full scale-[1.16]">
+              <div className="absolute inset-0 bg-gradient-to-t from-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]">
+                <div data-art className="h-full w-full scale-[1.1]">
                   {renderAsset(project.asset)}
                 </div>
               </div>
-              <span className="absolute left-5 top-5 rounded-md border border-moonlight/15 bg-deep/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-moonlight backdrop-blur-sm">
-                Project {String(i + 1).padStart(2, "0")} / 04
-              </span>
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute bottom-5 right-5 flex h-11 w-11 translate-y-2 items-center justify-center rounded-full bg-taillight text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"
-              >
-                →
-              </span>
+              <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 pointer-events-none">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-moonlight/70 bg-deep/50 backdrop-blur-sm rounded-md px-3 py-1.5 inline-block w-fit">
+                  Project {String(i + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
+                </span>
+                <div className="flex justify-end">
+                  <span className="pointer-events-auto flex h-11 w-11 translate-y-2 items-center justify-center rounded-full bg-taillight text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-hover:scale-105">
+                    →
+                  </span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-deep/90 via-deep/20 to-transparent pointer-events-none">
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-moonlight tracking-tight">
+                  {project.client}
+                </h3>
+                <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.15em] text-centerline">
+                  {project.sector} · {project.year}
+                </p>
+              </div>
             </a>
 
             {/* meta */}
-            <div className="relative z-10 flex flex-col gap-5 lg:w-[45%]">
+            {/* <div className="relative z-10 flex flex-col gap-5 w-full lg:w-full">
               <div className="flex items-baseline gap-4 font-mono text-[10px] uppercase tracking-[0.22em] text-asphalt">
                 <span className="text-centerline">MM {project.year}</span>
                 <span>{project.sector}</span>
@@ -198,22 +203,22 @@ export default function Work() {
                 </strong>
                 <span className="mt-1 block text-sm text-asphalt">{project.resultLabel}</span>
               </p>
-            </div>
+            </div> */}
           </article>
         ))}
 
-        {/* end card */}
-        <div className="flex shrink-0 items-center justify-center lg:w-[38vw]">
-          <a href="#contact" className="panel-card group flex flex-col items-center gap-4 px-8 py-10 sm:px-10 sm:py-12 text-center transition-transform duration-500 hover:-translate-y-1.5">
-            <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-centerline">
+        <div className="flex shrink-0 lg:w-[380px] lg:max-w-[440px]">
+          <a href="#contact" className="panel-card group relative flex flex-col items-center justify-center gap-4 px-8 py-12 sm:px-10 sm:py-14 text-center transition-all duration-500 hover:-translate-y-1.5 aspect-[4/5] rounded-3xl border border-hairline bg-deep hover:border-centerline/30 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.4)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-taillight/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+            <span className="relative font-mono text-[10px] uppercase tracking-[0.24em] text-centerline">
               Next project
             </span>
-            <span className="display-md text-2xl sm:text-3xl">
+            <span className="relative display-md text-2xl sm:text-3xl leading-tight text-moonlight">
               Your brand
               <br />
               goes here.
             </span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-taillight text-white transition-transform duration-500 group-hover:translate-x-1.5">
+            <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-taillight text-white transition-transform duration-500 group-hover:translate-x-1.5 group-hover:scale-105">
               →
             </span>
           </a>
