@@ -47,7 +47,7 @@ export default function Footer() {
             </a>
           </Magnetic>
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-asphalt">
-            Two Q4 slots left · Reply in 1 business day
+            Limited Q4 capacity · Reply in 1 business day
           </p>
         </div>
       </div>
@@ -60,16 +60,15 @@ export default function Footer() {
             
           </a>
           <p className="max-w-xs text-sm leading-relaxed text-asphalt">
-            The brand identity studio behind marks that survive the app icon,
-            the billboard, and the next twenty years.
+            The brand identity studio behind logos that work everywhere — from app icons to billboards, for the next twenty years.
           </p>
           <div className="max-w-xs">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-asphalt">
-              Mile notes — one email, monthly
+              Monthly insights — one email, no spam
             </p>
             {subscribed ? (
               <p className="flex items-center gap-2 text-sm text-centerline" role="status">
-                ✓ You&rsquo;re on the road.
+                ✓ You&rsquo;re subscribed.
               </p>
             ) : (
               <form
@@ -171,12 +170,12 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="shell flex flex-col items-start justify-between gap-4 border-t border-hairline py-8 font-mono text-[10px] uppercase tracking-[0.2em] text-asphalt/70 sm:flex-row sm:items-center">
-        <span>© {new Date().getFullYear()} Logo America LLC. All marks reserved.</span>
+        <span>© {new Date().getFullYear()} Logo America LLC. All rights reserved.</span>
         {/* <span aria-hidden="true" className="hidden lg:block">
           ─ ─ ─ ─ Mile 2,789 · You made it to LA ─ ─ ─ ─
         </span> */}
         <a href="#top" className="transition-colors hover:text-moonlight">
-          Back to mile 0 ↑
+          Back to top ↑
         </a>
       </div>
     </footer>

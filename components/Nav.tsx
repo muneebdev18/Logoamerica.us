@@ -126,7 +126,7 @@ export default function Nav() {
                 Start your mark →
               </a>
               <p className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-asphalt">
-                NYC ⟶ LA · Mile 0 of 2,789
+                Est. 2015 · Nationwide
               </p>
             </motion.div>
           </motion.div>

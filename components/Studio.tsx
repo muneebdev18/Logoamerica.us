@@ -88,8 +88,8 @@ export default function Studio() {
         <div className="grid gap-10 sm:gap-14 lg:grid-cols-2 lg:gap-20">
           <SectionHeading
             exit="04"
-            eyebrow="The studio"
-            lines={["Born in Brooklyn.", "Built for", "everywhere."]}
+            eyebrow="About Us"
+            lines={["Founded in 2015.", "Operating", "nationwide."]}
           />
           <div className="flex flex-col gap-8 self-end">
             <p
@@ -105,7 +105,7 @@ export default function Studio() {
             </p>
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-asphalt md:text-xl">
-                Nine years and 140 launches later, we draw out of New York and
+                Nine years and 140 launches later, we operate from New York and
                 Los Angeles for clients in every time zone. The names on the
                 door are the names in the Slack channel.
               </p>

@@ -233,10 +233,10 @@ export default function Reviews() {
       <div className="shell flex flex-col items-center gap-10 sm:gap-14">
         <SectionHeading
           exit="04¾"
-          eyebrow="Trusted brands & reviews"
+          eyebrow="Trusted Platform Reviews"
           align="center"
-          lines={["Rated across", "the map."]}
-          lead="We hold ourselves to the same standard on every platform where clients can speak freely — and they do."
+          lines={["Rated across", "every platform."]}
+          lead="We hold ourselves accountable on every platform where clients share honest feedback — and the results speak for themselves."
         />
 
         {/* Desktop grid */}

@@ -29,24 +29,26 @@ const siteUrl = "https://logoamerica.us";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Logo America — We Design the Marks America Runs On",
-    template: "%s — Logo America",
+    default: "Logo America | Professional Logo Design & Brand Identity Agency",
+    template: "%s | Logo America",
   },
   description:
-    "Logo America is a brand identity studio crafting distinctive logos, identity systems, and rebrands for companies that refuse to blend in. Strategy, design, and delivery — coast to coast.",
+    "Logo America is a premium brand identity studio crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",
   keywords: [
-    "logo design",
-    "brand identity",
+    "logo design agency",
     "branding agency",
-    "logo designer",
-    "rebranding",
-    "brand guidelines",
-    "naming",
-    "motion logo",
-    "Logo America",
+    "brand identity design",
+    "professional logo design",
+    "company rebranding",
+    "brand strategy",
+    "visual identity design",
+    "trademark logo design",
+    "logo design services",
+    "brand design agency",
   ],
   authors: [{ name: "Logo America" }],
   creator: "Logo America",
+  publisher: "Logo America",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -57,12 +59,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Logo America",
-    title: "Logo America — We Design the Marks America Runs On",
+    title: "Logo America | Professional Logo Design & Brand Identity Agency",
     description:
-      "Brand identity studio crafting distinctive logos and identity systems. NYC → LA, and everywhere between.",
+      "Premium logo design and brand identity for ambitious companies. Strategy, design, and delivery — nationwide.",
     images: [
       {
-        url: "/logo-hz.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Logo America — Brand Identity Studio",
@@ -71,9 +73,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Logo America — We Design the Marks America Runs On",
+    title: "Logo America | Professional Logo Design & Brand Identity Agency",
     description:
-      "Brand identity studio crafting distinctive logos, identity systems, and rebrands.",
+      "Premium logo design and brand identity for ambitious companies. Fixed-scope pricing, full IP ownership.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -85,6 +88,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 

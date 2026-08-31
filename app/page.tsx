@@ -22,20 +22,20 @@ const jsonLd = {
   url: "https://logoamerica.us",
   email: "contact@logoamerica.us",
   description:
-    "Brand identity studio crafting distinctive logos, identity systems, and rebrands. Strategy, design, and delivery — coast to coast.",
+    "Premium brand identity studio crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",
   areaServed: "United States",
   address: [
-    { "@type": "PostalAddress", addressLocality: "Brooklyn", addressRegion: "NY", addressCountry: "US" },
+    { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" },
     { "@type": "PostalAddress", addressLocality: "Los Angeles", addressRegion: "CA", addressCountry: "US" },
   ],
   sameAs: [],
   makesOffer: [
-    "Logo Design",
-    "Identity Systems",
-    "Rebrands",
+    "Custom Logo Design",
+    "Brand Identity Systems",
+    "Strategic Rebranding",
     "Naming & Verbal Identity",
-    "Motion & Responsive Logos",
-    "Brand Guidelines",
+    "Motion Logos & Digital Assets",
+    "Brand Guidelines & Asset Libraries",
   ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
 };
 

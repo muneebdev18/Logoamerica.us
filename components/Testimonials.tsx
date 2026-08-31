@@ -35,9 +35,9 @@ export default function Testimonials() {
       <div className="shell flex flex-col items-center gap-8 sm:gap-12">
         <SectionHeading
           exit="04½"
-          eyebrow="Word on the road"
+          eyebrow="Client Feedback"
           align="center"
-          lines={["Passengers, quoted."]}
+          lines={["Clients, quoted."]}
         />
 
         <div

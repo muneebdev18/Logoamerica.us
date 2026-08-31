@@ -12,12 +12,12 @@ export default function Contact() {
       <div className="shell relative grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col gap-4 sm:gap-6">
           <Reveal>
-            <p className="eyebrow">Final destination</p>
+            <p className="eyebrow">Start a conversation</p>
             <h2 className="display-lg mt-3 sm:mt-4 max-w-[12ch]">
               Start your mark<span className="text-taillight">.</span>
             </h2>
             <p className="mt-3 sm:mt-4 max-w-md text-base sm:text-lg leading-relaxed text-asphalt md:text-xl">
-              Three quick stops and you&rsquo;re on the road. Within one
+              Three quick steps and you&rsquo;re on your way. Within one
               business day a senior partner replies — not a sales rep, not a
               chatbot.
             </p>
@@ -33,7 +33,7 @@ export default function Contact() {
             >
               contact@logoamerica.us →
             </a>
-            <span>Brooklyn, NY · Los Angeles, CA</span>
+            <span>New York, NY · Los Angeles, CA</span>
             <span>Mon–Fri · 9–6 ET / 9–6 PT</span>
           </Reveal>
 

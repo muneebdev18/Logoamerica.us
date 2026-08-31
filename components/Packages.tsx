@@ -3,6 +3,8 @@ import Reveal from "./Reveal";
 import LeadCta from "./LeadCta";
 import { TIERS, ADDONS, FAQS } from "@/lib/data";
 
+const CARD_HEIGHT = "580px"; // Fixed card height
+
 export default function Packages() {
   return (
     <section id="packages" className="relative scroll-mt-20 py-12 sm:py-20">
@@ -17,8 +19,8 @@ export default function Packages() {
           exit="05"
           eyebrow="Packages"
           align="center"
-          lines={["Pick your lane.", "We'll draw the line."]}
-          lead="Fixed-scope quotes, priced before we draw anything. Every package ends with the same thing: a mark you own outright."
+          lines={["Choose your tier.", "We'll handle the rest."]}
+          lead="Fixed-scope pricing, quoted upfront. Every package delivers a logo you own outright — no licensing, no hidden fees."
         />
 
         {/* Mobile: horizontal scroll carousel */}
@@ -32,13 +34,14 @@ export default function Packages() {
                     ? "border-glow bg-gradient-to-b from-panel to-midnight shadow-[0_32px_90px_-40px_rgba(255,64,48,0.55)]"
                     : "panel-card"
                 }`}
+                style={{ height: CARD_HEIGHT }}
               >
                 {tier.featured && (
                   <span className="absolute hidden sm:block -top-3 left-6 rounded-full bg-taillight px-3 py-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white shadow-[0_8px_24px_-6px_rgba(255,64,48,0.7)]">
                     Most driven
                   </span>
                 )}
-                <header className="flex flex-col gap-3">
+                <header className="flex flex-col gap-3 flex-shrink-0">
                   <h3 className="font-mono text-[11px] uppercase tracking-[0.24em] text-centerline">
                     {tier.name}
                   </h3>
@@ -53,31 +56,33 @@ export default function Packages() {
                   <p className="min-h-[3.5rem] text-sm leading-relaxed text-asphalt">{tier.pitch}</p>
                 </header>
 
-                <ul className="flex flex-col gap-3 border-t border-hairline pt-4">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm leading-relaxed text-moonlight/85">
-                      <svg
-                        viewBox="0 0 16 16"
-                        className={`mt-0.5 h-4 w-4 flex-none shrink-0 ${tier.featured ? "text-taillight" : "text-interstate"}`}
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M3 8.5l3.5 3.5L13 5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex-1 min-h-0 overflow-hidden">
+                  <ul className="flex flex-col gap-3 border-t border-hairline pt-4 h-full overflow-y-auto scrollbar-thin scrollbar-track-hairline scrollbar-thumb-centerline/30">
+                    {tier.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm leading-relaxed text-moonlight/85 flex-shrink-0">
+                        <svg
+                          viewBox="0 0 16 16"
+                          className={`mt-0.5 h-4 w-4 flex-none shrink-0 ${tier.featured ? "text-taillight" : "text-interstate"}`}
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M3 8.5l3.5 3.5L13 5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <LeadCta
                   service={tier.name}
-                  className={`btn mt-auto w-full !py-4 ${tier.featured ? "btn-primary" : "btn-ghost"}`}
+                  className={`btn mt-auto w-full !py-4 flex-shrink-0 ${tier.featured ? "btn-primary" : "btn-ghost"}`}
                 >
                   {tier.cta}
                 </LeadCta>
@@ -95,18 +100,19 @@ export default function Packages() {
           {TIERS.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 0.09} y={48} className="h-full">
               <article
-                className={`group relative flex h-full flex-col gap-7 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${
+                className={`group relative flex flex-col gap-7 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${
                   tier.featured
                     ? "border-glow bg-gradient-to-b from-panel to-midnight shadow-[0_32px_90px_-40px_rgba(255,64,48,0.55)]"
                     : "panel-card hover:border-[#2a3a63]"
                 }`}
+                style={{ height: CARD_HEIGHT }}
               >
                 {tier.featured && (
                   <span className="absolute -top-3 left-7 rounded-full bg-taillight px-3 py-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white shadow-[0_8px_24px_-6px_rgba(255,64,48,0.7)]">
                     Most driven
                   </span>
                 )}
-                <header className="flex flex-col gap-4">
+                <header className="flex flex-col gap-4 flex-shrink-0">
                   <h3 className="font-mono text-[11px] uppercase tracking-[0.24em] text-centerline">
                     {tier.name}
                   </h3>
@@ -121,31 +127,33 @@ export default function Packages() {
                   <p className="min-h-[4rem] text-base leading-relaxed text-asphalt">{tier.pitch}</p>
                 </header>
 
-                <ul className="flex flex-col gap-3 border-t border-hairline pt-6">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm leading-relaxed text-moonlight/85">
-                      <svg
-                        viewBox="0 0 16 16"
-                        className={`mt-0.5 h-4 w-4 flex-none shrink-0 ${tier.featured ? "text-taillight" : "text-interstate"}`}
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M3 8.5l3.5 3.5L13 5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex-1 min-h-0 overflow-hidden">
+                  <ul className="flex flex-col gap-3 border-t border-hairline pt-6 h-full overflow-y-auto scrollbar-thin scrollbar-track-hairline scrollbar-thumb-centerline/30">
+                    {tier.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm leading-relaxed text-moonlight/85 flex-shrink-0">
+                        <svg
+                          viewBox="0 0 16 16"
+                          className={`mt-0.5 h-4 w-4 flex-none shrink-0 ${tier.featured ? "text-taillight" : "text-interstate"}`}
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M3 8.5l3.5 3.5L13 5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <LeadCta
                   service={tier.name}
-                  className={`btn mt-auto w-full !py-4 ${tier.featured ? "btn-primary" : "btn-ghost"}`}
+                  className={`btn mt-auto w-full !py-4 flex-shrink-0 ${tier.featured ? "btn-primary" : "btn-ghost"}`}
                 >
                   {tier.cta}
                 </LeadCta>
@@ -189,9 +197,9 @@ export default function Packages() {
           {/* <h3 className="eyebrow mb-6">Before you ask</h3> */}
           <SectionHeading
           exit="05"
-          eyebrow="Before you ask"
+          eyebrow="Questions"
           align="center"
-          lines={["Frequently Asked Questions"]}
+          lines={["Frequently Asked", "Questions"]}
           lead=""
         />
           <div className="flex mt-15 mx-auto w-full sm:w-[70%] flex-col divide-y divide-hairline rounded-2xl border border-hairline bg-deep/40">

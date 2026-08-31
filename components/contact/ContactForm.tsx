@@ -31,7 +31,7 @@ export default function ContactForm() {
           ✓
         </motion.span>
         <h3 className="display-md text-3xl">
-          Mark received<span className="text-taillight">.</span>
+          Brief received<span className="text-taillight">.</span>
         </h3>
         <p className="max-w-sm text-sm leading-relaxed text-asphalt">
           Thanks, {fields.name.split(" ")[0] || "friend"} — your brief is on our
@@ -281,7 +281,7 @@ export default function ContactForm() {
             disabled={!armed || sending}
             className={`btn btn-primary !py-4 ${armed && !sending ? "" : "cursor-wait opacity-60"}`}
           >
-            {sending ? "Sending…" : "Send it down the road"}
+            {sending ? "Sending…" : "Send brief"}
             <span aria-hidden="true">→</span>
           </button>
         )}

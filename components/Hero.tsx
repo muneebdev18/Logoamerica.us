@@ -63,7 +63,7 @@ const PlatformStars = ({ count = 5, color = "text-[#00b67a]" }: { count?: number
 const TRUST_PLATFORMS = [
   { name: "Trustpilot", score: "4.8", href: "https://www.trustpilot.com/review/logoamerica.agency", logo: <TrustpilotLogo />, stars: <PlatformStars color="text-[#00b67a]" /> },
   { name: "Clutch", score: "4.9", href: "https://clutch.co/profile/logo-america", logo: <ClutchLogo />, stars: <PlatformStars color="text-[#ff3d2e]" /> },
-  { name: "GoodFirms", score: "2", href: "https://www.goodfirms.co/company/logo-america", logo: <GoodFirmsLogo />, stars: <PlatformStars color="text-[#ffb400]" /> },
+  { name: "GoodFirms", score: "4.8", href: "https://www.goodfirms.co/company/logo-america", logo: <GoodFirmsLogo />, stars: <PlatformStars color="text-[#ffb400]" /> },
   // { name: "Google", score: "4.9", href: "https://www.google.com/search?q=logo+america+agency+reviews", logo: <GoogleG />, stars: <PlatformStars color="text-[#FBBC05]" /> },
 ];
 
@@ -315,19 +315,19 @@ export default function Hero() {
 
       <div ref={contentRef} className="shell relative z-10 flex flex-col gap-6 pb-5 pt-30 sm:gap-8 sm:pt-30 sm:pb-5 safe-area-top">
         <p data-fade-up className="eyebrow hidden sm:block">
-          Logo &amp; brand identity studio · Est. NYC ⟶ LA
+          Premium brand identity studio · Est. 2015
         </p>
 
         <h1 className="display-xl max-w-[16ch]">
           {word("Logo Design ")}
           <br />
           {word("Agency", "serif-accent !normal-case text-taillight")}{" "}
-          {word("Trusted", "text-outline")} {word("Across the USA.")}
+          {word("Built for", "text-outline")} {word("Growth.")}
         </h1>
 
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <p data-fade-up className="max-w-md text-lg leading-relaxed text-asphalt md:text-xl">
-          Logo America is a Texas-based brand identity studio designing logos, brand systems, and rebrands for companies from Houston to Los Angeles. Whether you're a startup in Austin or an established brand in New York, we build marks that make customers remember you — and trust you — at first glance
+          Logo America crafts distinctive logos and complete brand systems for companies ready to stand out. From funded startups to established enterprises, we deliver identity work that drives recognition, trust, and measurable business results.
           </p>
 
           <div data-fade-up className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">

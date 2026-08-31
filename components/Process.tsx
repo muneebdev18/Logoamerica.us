@@ -97,8 +97,8 @@ export default function Process() {
           exit="03"
           eyebrow="Process"
           align="center"
-          lines={["One road. Five stops."]}
-          lead="A sequence we've driven enough times to know where the potholes are. You'll always know which stop you're at — and what comes next."
+          lines={["One path.", "Five milestones."]}
+          lead="A proven sequence we've refined across 140+ brand launches. You'll always know which milestone you're at — and exactly what comes next."
         />
 
         <div className="relative mx-auto max-w-5xl">

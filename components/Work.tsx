@@ -91,12 +91,11 @@ export default function Work() {
         <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             exit="02"
-            eyebrow="Selected marks"
-            lines={["Mile markers from", "recent routes."]}
+            eyebrow="Selected Work"
+            lines={["Case studies from", "recent partnerships."]}
           />
           <p className="hidden max-w-xs text-sm leading-relaxed text-asphalt lg:block">
-            Four identities, four industries — measured by what happened after
-            launch. Scroll on.
+            Four brands, four industries — measured by what happened after launch.
           </p>
         </div>
 
@@ -140,7 +139,7 @@ export default function Work() {
                 </div>
               </div>
               <span className="absolute left-5 top-5 rounded-md border border-moonlight/15 bg-deep/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-moonlight backdrop-blur-sm">
-                Case {String(i + 1).padStart(2, "0")} / 04
+                Project {String(i + 1).padStart(2, "0")} / 04
               </span>
               <span
                 aria-hidden="true"
@@ -183,10 +182,10 @@ export default function Work() {
         <div className="flex shrink-0 items-center justify-center lg:w-[38vw]">
           <a href="#contact" className="panel-card group flex flex-col items-center gap-4 px-8 py-10 sm:px-10 sm:py-12 text-center transition-transform duration-500 hover:-translate-y-1.5">
             <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-centerline">
-              Next marker
+              Next project
             </span>
             <span className="display-md text-2xl sm:text-3xl">
-              Your mark
+              Your brand
               <br />
               goes here.
             </span>
