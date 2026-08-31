@@ -79,31 +79,35 @@ export type Project = {
   scope: string[];
   result: string;
   resultLabel: string;
-  art: "canyon" | "skyline" | "heartland" | "coast";
+  asset: {
+    type: "image" | "video";
+    src: string;
+    poster?: string;
+  };
   accent: string;
 };
 
 export const PROJECTS: Project[] = [
   {
-    client: "Meridian Financial",
+    client: "Visuo",
     sector: "Fintech",
     year: "2025",
     scope: ["Full Rebrand", "Symbol Design", "Identity System"],
     result: "+212%",
     resultLabel: "Unaided brand recall within two quarters",
-    art: "canyon",
+    asset: { type: "image", src: "/P1.jpeg" },
     accent: "#ff4030",
   },
-  {
-    client: "Hartfield & Co.",
-    sector: "E-commerce",
-    year: "2025",
-    scope: ["Wordmark", "Packaging System", "Guidelines"],
-    result: "$14M",
-    resultLabel: "Incremental revenue the year the new identity launched",
-    art: "heartland",
-    accent: "#f5b700",
-  },
+  // {
+  //   client: "Hartfield & Co.",
+  //   sector: "E-commerce",
+  //   year: "2025",
+  //   scope: ["Wordmark", "Packaging System", "Guidelines"],
+  //   result: "$14M",
+  //   resultLabel: "Incremental revenue the year the new identity launched",
+  //   asset: { type: "image", src: "/P2.jpeg" },
+  //   accent: "#f5b700",
+  // },
   {
     client: "Vantage Health",
     sector: "Healthcare",
@@ -111,7 +115,7 @@ export const PROJECTS: Project[] = [
     scope: ["Symbol", "Accessible Palette", "Signage Suite"],
     result: "AA",
     resultLabel: "Contrast-compliant identity across 400+ touchpoints",
-    art: "coast",
+    asset: { type: "image", src: "/P3.jpeg" },
     accent: "#4a72ff",
   },
   {
@@ -121,7 +125,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    art: "skyline",
+    asset: { type: "video", src: "/P4.mp4", poster: "/P5.jpeg" },
     accent: "#7fd4b1",
   },
 ];

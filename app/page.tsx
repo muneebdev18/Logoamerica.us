@@ -54,11 +54,11 @@ export default function Home() {
         <Marquee />
         <Services />
         <Work />
+        <Packages />
         <Testimonials />
         <Reviews />
         <Process />
         <Studio />
-        <Packages />
         <Contact />
       </main>
       <Footer />

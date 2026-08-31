@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionHeading from "./SectionHeading";
-import ProjectArt from "./ProjectArt";
 import { PROJECTS } from "@/lib/data";
 
 export default function Work() {
@@ -81,6 +80,31 @@ export default function Work() {
     return () => mm.revert();
   }, []);
 
+  const renderAsset = (asset: { type: "image" | "video"; src: string; poster?: string }) => {
+    if (asset.type === "video") {
+      return (
+        <video
+          src={asset.src}
+          poster={asset.poster}
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      );
+    }
+    return (
+      <img
+        src={asset.src}
+        alt=""
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    );
+  };
+
   return (
     <section
       id="work"
@@ -133,9 +157,9 @@ export default function Work() {
               aria-label={`${project.client} case study`}
               className="relative z-10 block overflow-hidden rounded-3xl border border-hairline lg:w-[55%]"
             >
-              <div className="aspect-[16/10] w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+              <div className=" w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
                 <div data-art className="h-full w-full scale-[1.16]">
-                  <ProjectArt variant={project.art} accent={project.accent} className="h-full w-full" />
+                  {renderAsset(project.asset)}
                 </div>
               </div>
               <span className="absolute left-5 top-5 rounded-md border border-moonlight/15 bg-deep/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-moonlight backdrop-blur-sm">
