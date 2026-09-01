@@ -136,7 +136,7 @@ export default function Work() {
       >
         {PROJECTS.map((project, i) => (
           <article
-            key={project.client}
+            key={i}
             className="group relative flex shrink-0 flex-col gap-6 lg:w-[380px] lg:max-w-[440px] lg:flex-col"
           >
             <span
