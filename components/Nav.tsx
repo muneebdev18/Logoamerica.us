@@ -11,9 +11,14 @@ import { Phone } from "lucide-react";
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const progress = Math.min(window.scrollY / 200, 1);
+      setScrollProgress(progress);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -25,22 +30,24 @@ export default function Nav() {
     return () => unlockScroll();
   }, [open]);
 
+  const headerWidth = `${100 - scrollProgress * 15}%`;
+
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "border-b border-hairline bg-midnight/80 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
-        }`}
+        className="fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-500 pt-safe"
       >
-        <div className="shell flex h-16 items-center justify-between mt-8 sm:mt-2 md:h-20 pt-safe safe-area-top">
+        <motion.div
+          className="flex h-16 items-center justify-between rounded-full border border-hairline bg-midnight/80 backdrop-blur-xl px-3 mt-4 mx-[15px] sm:mx-[40px] sm:mt-5 lg:mt-6 md:h-20 sm:px-8"
+          animate={{ width: headerWidth }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           <a
             href="#top"
             className="group flex items-center gap-2.5"
             aria-label="Logo America — back to top"
           >
-            <img src="/logo-hz.png" alt="Logo America" className="h-20 w-auto object-contain sm:h-[100px]" />
+            <img src="/logo-hz.png" alt="Logo America" className="h-[75px] sm:h-[95px] w-auto object-contain sm:h-16" />
           </a>
 
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
@@ -50,7 +57,6 @@ export default function Nav() {
                 href={link.href}
                 className="group font-bold text-[13px] uppercase tracking-[0.2em] text-asphalt transition-colors hover:text-moonlight"
               >
-                {/* <span className="mr-1.5 text-centerline/70">{link.exit}</span> */}
                 {link.label}
               </a>
             ))}
@@ -93,7 +99,7 @@ export default function Nav() {
               </div>
             </button>
           </div>
-        </div>
+        </motion.div>
       </header>
 
       <AnimatePresence>
@@ -116,7 +122,6 @@ export default function Nav() {
                   transition={{ delay: 0.08 + i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="flex items-baseline gap-4 border-b border-hairline py-5"
                 >
-                  
                   <span className="font-display text-3xl font-black uppercase tracking-tight text-moonlight">
                     {link.label}
                   </span>

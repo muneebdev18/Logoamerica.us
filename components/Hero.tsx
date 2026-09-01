@@ -303,9 +303,9 @@ export default function Hero() {
       />
 
       <div ref={contentRef} className="shell relative z-10 flex flex-col gap-6 pb-5 pt-30 sm:gap-8 sm:pt-30 sm:pb-5 safe-area-top">
-        <p data-fade-up className="eyebrow hidden sm:block">
+        {/* <p data-fade-up className="eyebrow hidden sm:block">
           Premium brand identity studio · Est. 2015
-        </p>
+        </p> */}
 
         <h1 className="display-xl max-w-[16ch]">
           {word("Logo Design ")}
