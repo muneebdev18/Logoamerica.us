@@ -62,7 +62,7 @@ export default function Footer() {
           <p className="max-w-xs text-sm leading-relaxed text-asphalt">
             The brand identity studio behind logos that work everywhere — from app icons to billboards, for the next twenty years.
           </p>
-          <div className="flex flex-col gap-2 mt-4 font-mono text-[12px] text-asphalt">
+          <div className="flex flex-col gap-2 mt-4 font-mono text-[14px] font-bold text-asphalt">
             <a href="tel:+12819539004" className="flex items-center gap-2 transition-colors hover:text-centerline">
               <span aria-hidden="true">☎</span>
               <span>281 953 9004</span>

@@ -105,7 +105,7 @@ export default function Studio() {
             </p>
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-asphalt md:text-xl">
-                Nine years and 140 launches later, we operate from New York and
+                Nine years and 85 launches later, we operate from New York and
                 Los Angeles for clients in every time zone. The names on the
                 door are the names in the Slack channel.
               </p>

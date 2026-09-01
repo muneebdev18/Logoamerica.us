@@ -33,7 +33,7 @@ function StepCard({ step, flip }: { step: (typeof PROCESS)[number]; flip: boolea
       className="panel-card group relative flex h-full flex-col gap-4 p-6 sm:p-7 md:p-8 transition-colors duration-500 hover:border-centerline/40"
     >
       <div className="flex items-center justify-between gap-4">
-        <span className="font-display text-2xl sm:text-3xl font-black text-hairline transition-colors duration-500 group-hover:text-centerline md:text-4xl">
+        <span className="font-display text-2xl sm:text-3xl font-black text-[#f4b710] transition-colors duration-500 group-hover:text-centerline md:text-4xl">
           {step.step}
         </span>
         <span className="rounded-full border border-hairline px-3 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-asphalt">
