@@ -24,7 +24,7 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteUrl = "https://logoamerica.us";
+const siteUrl = "https://www.logoamerica.us";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -20,7 +20,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Logo America",
-  url: "https://logoamerica.us",
+  url: "https://www.logoamerica.us",
   email: "contact@logoamerica.us",
   description:
     "Premium brand identity studio crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",

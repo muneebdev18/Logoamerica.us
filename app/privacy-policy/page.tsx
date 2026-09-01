@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
           <p className="max-w-2xl text-lg leading-relaxed text-asphalt">
             Last updated: September 2026. This policy explains how Logo America LLC
             (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and protects
-            your information when you visit logoamerica.us or engage our services.
+            your information when you visit www.logoamerica.us or engage our services.
           </p>
         </div>
       </section>

@@ -161,29 +161,29 @@ export default function LeadModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.97 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="border-glow relative max-h-[92dvh] w-full max-w-[28rem] overflow-x-hidden overflow-y-auto overscroll-contain rounded-t-[1.5rem] bg-gradient-to-b from-panel-2/95 via-panel to-midnight shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:max-h-[88dvh] sm:rounded-[1.5rem]"
+            className="border-glow w-[40%] relative max-h-[92dvh] overflow-x-hidden overflow-y-auto overscroll-contain rounded-t-[1.5rem] bg-gradient-to-b from-panel-2/95 via-panel to-midnight shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:max-h-[88dvh] sm:rounded-[1.5rem]"
           >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
             >
-              <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-              <div className="absolute -right-16 -top-20 h-44 w-44 rounded-full bg-taillight/[0.12] blur-[70px]" />
+              <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+              <div className="absolute -right-12 -top-16 h-36 w-36 rounded-full bg-taillight/[0.12] blur-[70px]" />
             </div>
 
             <button
               type="button"
               onClick={close}
               aria-label="Close"
-              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-hairline bg-midnight/60 text-asphalt backdrop-blur transition-all duration-300 hover:rotate-90 hover:border-taillight hover:text-moonlight"
+              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-hairline bg-midnight/60 text-asphalt backdrop-blur transition-all duration-300 hover:rotate-90 hover:border-taillight hover:text-moonlight"
             >
-              <svg viewBox="0 0 14 14" className="h-3 w-3" aria-hidden="true">
+              <svg viewBox="0 0 14 14" className="h-2.5 w-2.5" aria-hidden="true">
                 <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
               </svg>
             </button>
 
             {status === "success" ? (
-              <div className="flex flex-col items-center gap-4 px-6 py-12 text-center">
+              <div className="flex flex-col items-center gap-4 px-6 py-10 text-center">
                 <motion.span
                   initial={{ scale: 0, rotate: -30 }}
                   animate={{ scale: 1, rotate: 0 }}
@@ -192,7 +192,7 @@ export default function LeadModal() {
                 >
                   ✓
                 </motion.span>
-                <h3 className="display-md text-2xl">
+                <h3 className="display-md text-xl">
                   Brief received<span className="text-taillight">.</span>
                 </h3>
                 <p className="max-w-xs text-[13px] leading-relaxed text-asphalt">
@@ -204,13 +204,13 @@ export default function LeadModal() {
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col gap-5 px-5 py-6 sm:px-7">
-                <div className="flex flex-col gap-2 pr-10">
+              <div className="flex flex-col gap-5 px-6 py-5">
+                <div className="flex flex-col gap-1.5">
                   <p className="eyebrow text-[0.7rem]">
                     <img src="/logo-hz.png" alt="" className="h-4 w-4 object-contain" />
                     Free strategy call
                   </p>
-                  <h3 id="lead-modal-title" className="display-md text-xl md:text-2xl">
+                  <h3 id="lead-modal-title" className="display-md text-lg md:text-xl">
                     Start your mark<span className="text-taillight">.</span>
                   </h3>
                   <p className="text-[13px] leading-relaxed text-asphalt">
@@ -219,7 +219,7 @@ export default function LeadModal() {
                   </p>
                 </div>
 
-                <form onSubmit={submit} noValidate className="flex flex-col gap-4">
+                <form onSubmit={submit} noValidate className="flex flex-col gap-3.5">
                   <input
                     type="text"
                     name="companyWebsite"
@@ -229,7 +229,7 @@ export default function LeadModal() {
                     className="pointer-events-none absolute left-0 top-0 h-px w-px overflow-hidden opacity-0"
                   />
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     <label className={label}>
                       Full Name *
                       <input
@@ -256,7 +256,7 @@ export default function LeadModal() {
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     <label className={label}>
                       Email *
                       <input
@@ -314,7 +314,7 @@ export default function LeadModal() {
                     Project Details *
                     <textarea
                       name="details"
-                      rows={4}
+                      rows={3}
                       placeholder="We're rebranding this spring and need a mark that works from app icon to billboard…"
                       className="field field-sm resize-none min-h-[44px]"
                       value={fields.details}
@@ -337,11 +337,11 @@ export default function LeadModal() {
                     )}
                   </AnimatePresence>
 
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className={`btn btn-primary w-full py-4 ${status === "sending" ? "cursor-wait opacity-70" : ""}`}
-                  >
+<button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className={`btn btn-primary w-full py-3.5 ${status === "sending" ? "cursor-wait opacity-70" : ""}`}
+                    >
                     {status === "sending" ? "Sending…" : "Request a free quote"}
                     <span aria-hidden="true">→</span>
                   </button>

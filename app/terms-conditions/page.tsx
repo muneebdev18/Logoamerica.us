@@ -14,7 +14,7 @@ export default function TermsConditions() {
           <p className="eyebrow">Legal</p>
           <h1 className="display-lg max-w-[16ch]">Terms & Conditions</h1>
           <p className="max-w-2xl text-lg leading-relaxed text-asphalt">
-            Last updated: September 2026. These terms govern your access to logoamerica.us and
+            Last updated: September 2026. These terms govern your access to www.logoamerica.us and
             any services provided by Logo America LLC. By using our site or engaging our services,
             you agree to these terms.
           </p>
@@ -26,7 +26,7 @@ export default function TermsConditions() {
           <article>
             <h2 className="display-md mb-4">1. Acceptance of Terms</h2>
             <div className="space-y-4 text-asphalt leading-relaxed">
-              <p>By accessing logoamerica.us (&ldquo;the Site&rdquo;) or engaging Logo America LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) for brand identity services (&ldquo;Services&rdquo;), you (&ldquo;Client,&rdquo; &ldquo;you,&rdquo; &ldquo;your&rdquo;) agree to be bound by these Terms & Conditions (&ldquo;Terms&rdquo;), our <a href="/privacy-policy" className="text-taillight hover:text-tailglow underline">Privacy Policy</a>, and any applicable service agreement or proposal. If you do not agree, do not use the Site or engage our Services.</p>
+              <p>By accessing www.logoamerica.us (&ldquo;the Site&rdquo;) or engaging Logo America LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) for brand identity services (&ldquo;Services&rdquo;), you (&ldquo;Client,&rdquo; &ldquo;you,&rdquo; &ldquo;your&rdquo;) agree to be bound by these Terms & Conditions (&ldquo;Terms&rdquo;), our <a href="/privacy-policy" className="text-taillight hover:text-tailglow underline">Privacy Policy</a>, and any applicable service agreement or proposal. If you do not agree, do not use the Site or engage our Services.</p>
               <p>We may update these Terms at any time. Continued use after changes constitutes acceptance. The current version is always posted on this page with the &ldquo;Last updated&rdquo; date.</p>
             </div>
           </article>

@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Logo America",
-  domain: "https://logoamerica.us",
+  domain: "https://www.logoamerica.us",
   email: "contact@logoamerica.us",
   tagline: "Premium logo design and brand identity for ambitious companies.",
 };
