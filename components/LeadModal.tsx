@@ -208,7 +208,7 @@ export default function LeadModal() {
                     Free strategy call
                   </p>
                   <h3 id="lead-modal-title" className="display-md text-lg md:text-xl">
-                    Start your mark<span className="text-taillight">.</span>
+                  Get A Free Quote<span className="text-taillight">.</span>
                   </h3>
                   <p className="text-[13px] leading-relaxed text-asphalt">
                     Tell us where your brand is headed — a senior partner replies
