@@ -138,6 +138,7 @@ export default function ContactForm() {
                     className="field min-h-[44px]"
                     value={fields.name}
                     onChange={(e) => form.set("name", e.target.value)}
+                    required
                   />
                 </label>
                 <label className="flex flex-col gap-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-moonlight/65">
@@ -150,6 +151,7 @@ export default function ContactForm() {
                     className="field min-h-[44px]"
                     value={fields.email}
                     onChange={(e) => form.set("email", e.target.value)}
+                    required
                   />
                 </label>
                 <label className="flex flex-col gap-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-moonlight/65">
@@ -161,7 +163,8 @@ export default function ContactForm() {
                     className="field min-h-[44px]"
                     value={fields.company}
                     onChange={(e) => form.set("company", e.target.value)}
-                    type="number"
+                    type="tel"
+                    required
                   />
                 </label>
             </motion.div>

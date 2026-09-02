@@ -29,11 +29,11 @@ const siteUrl = "https://www.logoamerica.us";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Logo America | Professional Logo Design & Brand Identity Agency",
+    default: "Logo America | Top Logo Design Company In Texas",
     template: "%s | Logo America",
   },
   description:
-    "Logo America is a premium brand identity studio crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",
+    "Logo America is a premium brand identity studio in Texas, crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",
   keywords: [
     "logo design agency",
     "branding agency",

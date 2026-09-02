@@ -26,6 +26,13 @@ const TRUST_PLATFORMS = [
     logoSrc: "/Clutch.png",
     color: "#ff3d2e" 
   },
+  { 
+    name: "Texas Based", 
+    // score: "4.9", 
+    href: "#", 
+    logoSrc: "/texas-flag.jpg",
+    // color: "#ff3d2e" 
+  }
 ];
 
 function TrustBadges() {

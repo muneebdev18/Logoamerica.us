@@ -64,7 +64,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      {/* <LeadModal /> */}
+      <LeadModal />
     </SmoothScroll>
   );
 }

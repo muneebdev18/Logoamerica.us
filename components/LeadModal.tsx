@@ -15,10 +15,9 @@ type Status = "idle" | "sending" | "success" | "error";
 const INITIAL = {
   name: "",
   email: "",
-  phone: "",
   company: "",
-  service: "",
-  details: "",
+  services: [] as string[],
+  message: "",
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,7 +42,7 @@ export default function LeadModal() {
     try {
       sessionStorage.setItem(SESSION_KEY, "1");
     } catch {}
-    if (service) setFields((f) => ({ ...f, service }));
+    if (service) setFields((f) => ({ ...f, services: [service] }));
     setStatus("idle");
     setErrorMsg("");
     setVisible(true);
@@ -89,7 +88,7 @@ export default function LeadModal() {
     };
   }, [visible, close]);
 
-  const set = (key: keyof typeof INITIAL, value: string) =>
+  const set = (key: keyof typeof INITIAL, value: string | string[]) =>
     setFields((f) => ({ ...f, [key]: value }));
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
@@ -99,10 +98,8 @@ export default function LeadModal() {
     if (fields.name.trim().length < 2) return fail("Please tell us your full name.");
     if (!EMAIL_RE.test(fields.email.trim()))
       return fail("That email address doesn't look right — mind checking it?");
-    if (fields.phone.replace(/\D/g, "").length < 7)
-      return fail("Please enter a valid phone number so we can reach you.");
-    if (!fields.service) return fail("Please pick the service you're interested in.");
-    if (fields.details.trim().length < 10)
+    if (fields.services.length === 0) return fail("Please pick at least one service.");
+    if (fields.message.trim().length < 10)
       return fail("Tell us a little more about the project — at least a sentence.");
 
     setStatus("sending");
@@ -116,7 +113,7 @@ export default function LeadModal() {
           ...fields,
           companyWebsite: (e.currentTarget.elements.namedItem("companyWebsite") as HTMLInputElement)?.value ?? "",
           elapsed: elapsedSince(startedAt.current),
-          source: "lead-modal",
+          source: "start-your-mark",
           page: window.location.pathname,
         }),
       });
@@ -161,7 +158,7 @@ export default function LeadModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.97 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="border-glow w-[40%] relative max-h-[92dvh] overflow-x-hidden overflow-y-auto overscroll-contain rounded-t-[1.5rem] bg-gradient-to-b from-panel-2/95 via-panel to-midnight shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:max-h-[88dvh] sm:rounded-[1.5rem]"
+            className="border-glow w-full sm:w-[40%] relative h-full max-h-full overflow-x-hidden overflow-y-auto overscroll-contain rounded-t-[1.5rem] bg-gradient-to-b from-panel-2/95 via-panel to-midnight shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:max-h-[88dvh] sm:rounded-[1.5rem]"
           >
             <div
               aria-hidden="true"
@@ -183,7 +180,7 @@ export default function LeadModal() {
             </button>
 
             {status === "success" ? (
-              <div className="flex flex-col items-center gap-4 px-6 py-10 text-center">
+              <div className="flex flex-col items-center justify-center h-full gap-4 px-6 py-10 text-center">
                 <motion.span
                   initial={{ scale: 0, rotate: -30 }}
                   animate={{ scale: 1, rotate: 0 }}
@@ -240,25 +237,11 @@ export default function LeadModal() {
                         className="field field-sm min-h-[44px]"
                         value={fields.name}
                         onChange={(e) => set("name", e.target.value)}
+                        required
                       />
                     </label>
                     <label className={label}>
-                      Phone *
-                      <input
-                        type="tel"
-                        name="phone"
-                        autoComplete="tel"
-                        placeholder="(212) 555-0148"
-                        className="field field-sm min-w-0 min-h-[44px]"
-                        value={fields.phone}
-                        onChange={(e) => set("phone", e.target.value)}
-                      />
-                    </label>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <label className={label}>
-                      Email *
+                      Work Email *
                       <input
                         type="email"
                         name="email"
@@ -267,29 +250,34 @@ export default function LeadModal() {
                         className="field field-sm min-w-0 min-h-[44px]"
                         value={fields.email}
                         onChange={(e) => set("email", e.target.value)}
-                      />
-                    </label>
-                    <label className={label}>
-                      Company / Business
-                      <input
-                        name="company"
-                        autoComplete="organization"
-                        placeholder="Hartfield & Co."
-                        className="field field-sm min-w-0 min-h-[44px]"
-                        value={fields.company}
-                        onChange={(e) => set("company", e.target.value)}
+                        required
                       />
                     </label>
                   </div>
 
                   <label className={label}>
-                    Service Required *
+                    Phone
+                    <input
+                      name="company"
+                      type="tel"
+                      autoComplete="organization"
+                      placeholder="000 000 0000"
+                      className="field field-sm min-w-0 min-h-[44px]"
+                      value={fields.company}
+                      onChange={(e) => set("company", e.target.value)}
+                      required
+                    />
+                  </label>
+
+                  <label className={label}>
+                    Services *
                     <span className="relative block">
                       <select
+                      required
                         name="service"
                         className="field field-sm appearance-none pr-10 [&_option]:bg-midnight min-h-[44px]"
-                        value={fields.service}
-                        onChange={(e) => set("service", e.target.value)}
+                        value={fields.services[0] || ""}
+                        onChange={(e) => set("services", e.target.value ? [e.target.value] : [])}
                       >
                         <option value="" disabled>
                           Select a service…
@@ -300,25 +288,19 @@ export default function LeadModal() {
                           </option>
                         ))}
                       </select>
-                      <svg
-                        viewBox="0 0 12 8"
-                        aria-hidden="true"
-                        className="pointer-events-none absolute right-3.5 top-1/2 h-2 w-3 -translate-y-1/2 text-asphalt"
-                      >
-                        <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                      </svg>
+                     
                     </span>
                   </label>
 
                   <label className={label}>
-                    Project Details *
+                    Tell Us More *
                     <textarea
-                      name="details"
+                      name="message"
                       rows={3}
                       placeholder="We're rebranding this spring and need a mark that works from app icon to billboard…"
                       className="field field-sm resize-none min-h-[44px]"
-                      value={fields.details}
-                      onChange={(e) => set("details", e.target.value)}
+                      value={fields.message}
+                      onChange={(e) => set("message", e.target.value)}
                     />
                   </label>
 

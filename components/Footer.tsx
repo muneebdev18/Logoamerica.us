@@ -191,6 +191,30 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Payment methods */}
+      <div className="shell flex flex-wrap items-center justify-center gap-3 py-6 border-t border-hairline">
+        {[
+          { label: "Visa", bg: "bg-white", content: <text x="20" y="17.5" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontStyle="italic" fontWeight="700" fontSize="11.5" letterSpacing="0.3" fill="#1A1F71">VISA</text> },
+          { label: "Mastercard", bg: "bg-white", content: <><circle cx="17" cy="13" r="7.2" fill="#EB001B" /><circle cx="23" cy="13" r="7.2" fill="#F79E1B" /><path d="M20 7.3a7.2 7.2 0 0 1 0 11.4 7.2 7.2 0 0 1 0-11.4Z" fill="#FF5F00" /></> },
+          { label: "American Express", bg: "bg-[#006FCF]", content: <text x="20" y="16.5" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="9" letterSpacing="0.4" fill="#fff">AMEX</text> },
+          { label: "PayPal", bg: "bg-white", content: <text x="21" y="17" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontStyle="italic" fontWeight="700" fontSize="10.5" fill="#003087">Pay<tspan fill="#009cde">Pal</tspan></text> },
+          { label: "Stripe", bg: "bg-[#635BFF]", content: <text x="20" y="17" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontStyle="italic" fontSize="10.5" letterSpacing="0.2" fill="#fff">stripe</text> },
+          { label: "Bank Transfer", bg: "bg-[#0F3D2E]", content: <><path d="M20 6L28 10.5H12L20 6Z" fill="#fff" /><rect x="13" y="12" width="2" height="7" fill="#fff" /><rect x="19" y="12" width="2" height="7" fill="#fff" /><rect x="25" y="12" width="2" height="7" fill="#fff" /><rect x="11" y="20" width="18" height="2" fill="#fff" /></> },
+        ].map((method) => (
+          <div key={method.label} className="group relative">
+            <div className={`flex items-center gap-2 rounded-md ${method.bg} px-2 py-1.5 transition-transform duration-300 ease-out group-hover:-translate-y-1`} aria-label={method.label}>
+              <svg width="40" height="26" viewBox="0 0 40 26" role="img" aria-hidden="true">
+                {method.content}
+              </svg>
+            </div>
+            <span className="pointer-events-none absolute left-1/2 -top-9 -translate-x-1/2 whitespace-nowrap rounded-lg bg-panel-2 px-3 py-1.5 font-mono text-[11px] font-medium tracking-wide text-moonlight opacity-0 shadow-lg ring-1 ring-hairline transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-0 translate-y-1">
+              {method.label}
+              <span className="absolute left-1/2 -bottom-1 -translate-x-1/2 border-4 border-transparent border-t-panel-2" />
+            </span>
+          </div>
+        ))}
+      </div>
+
       {/* Bottom bar */}
       <div className="shell flex flex-col items-start justify-between gap-4 border-t border-hairline py-8 font-mono text-[10px] uppercase tracking-[0.2em] text-asphalt/70 sm:flex-row sm:items-center">
         <span>© {new Date().getFullYear()} Logo America LLC. All rights reserved.</span>

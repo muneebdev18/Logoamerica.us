@@ -69,7 +69,7 @@ export default function Services() {
           <SectionHeading
             exit="01"
             eyebrow="Services"
-            lines={["Logo Design & Branding","for Growing Companies."]}
+            lines={["Logo Design for","BUSINESSES."]}
           />
           <Reveal delay={0.1} className="self-end">
             <p className="text-lg leading-relaxed text-moonlight md:text-xl lg:text-2xl">

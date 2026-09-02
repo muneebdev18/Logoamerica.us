@@ -15,7 +15,7 @@ export default function Contact() {
           <Reveal>
             <p className="eyebrow">Start a conversation</p>
             <h2 className="display-lg mt-3 sm:mt-4 max-w-[12ch]">
-              Start your mark<span className="text-taillight">.</span>
+            Get A Free Quote<span className="text-taillight">.</span>
             </h2>
             <p className="mt-3 sm:mt-4 max-w-md text-base sm:text-lg leading-relaxed text-asphalt md:text-xl">
               Three quick steps and you&rsquo;re on your way. Within one
