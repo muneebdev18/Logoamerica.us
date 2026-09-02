@@ -279,7 +279,7 @@ export const PROCESS: ProcessStep[] = [
 export const STATS = [
   { value: 80, suffix: "+", label: "Brand identities launched nationwide" },
   { value: 5, suffix: " yrs", label: "In practice — average client partnership: 3.2 years" },
-  { value: 80, prefix: "$", suffix: "K", label: "Client brand value influenced since 2015" },
+  { value: 80, prefix: "$", suffix: "K", label: "Client brand value influenced since 2020" },
   { value: 7, suffix: "", label: "Industry awards, including 4 for logo design excellence" },
 ];
 

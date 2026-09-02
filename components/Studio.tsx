@@ -89,7 +89,7 @@ export default function Studio() {
           <SectionHeading
             exit="04"
             eyebrow="About Us"
-            lines={["Founded in 2015.", "Operating", "nationwide."]}
+            lines={["Founded in 2020.", "Operating", "nationwide."]}
           />
           <div className="flex flex-col gap-8 self-end">
             <p

@@ -34,11 +34,9 @@ export default function Nav() {
 
   return (
     <>
-      <header
-        className="fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-500 pt-safe"
-      >
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-500 pt-safe">
         <motion.div
-          className="flex h-16 items-center justify-between rounded-full border border-hairline bg-midnight/80 backdrop-blur-xl px-3 mt-4 mx-[15px] sm:mx-[40px] sm:mt-5 lg:mt-6 md:h-20 sm:px-8"
+          className="flex h-16 items-center justify-between rounded-full border border-hairline/50 bg-midnight/60 backdrop-blur-2xl px-3 mt-4 mx-[15px] sm:mx-[40px] sm:mt-5 lg:mt-6 md:h-20 sm:px-8"
           animate={{ width: headerWidth }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
@@ -47,10 +45,17 @@ export default function Nav() {
             className="group flex items-center gap-2.5"
             aria-label="Logo America — back to top"
           >
-            <img src="/logo-hz.png" alt="Logo America" className="h-[75px] sm:h-[95px] w-auto object-contain sm:h-16" />
+            <img
+              src="/logo-hz.png"
+              alt="Logo America"
+              className="h-[75px] sm:h-[95px] w-auto object-contain sm:h-16"
+            />
           </a>
 
-          <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-8 lg:flex"
+          >
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -69,13 +74,16 @@ export default function Nav() {
               aria-label="Call us"
             >
               <span aria-hidden="true">
-                <Phone/>
+                <Phone />
               </span>
               <span>281 953 9004</span>
             </a>
             <Magnetic strength={0.25}>
-              <a href="#contact" className="btn btn-primary hidden !py-3 !px-6 sm:inline-flex">
-                Start your mark
+              <a
+                href="#contact"
+                className="btn btn-primary hidden !py-3 !px-6 sm:inline-flex"
+              >
+                Get a Free Quote
               </a>
             </Magnetic>
             <button
@@ -119,7 +127,11 @@ export default function Nav() {
                   onClick={() => setOpen(false)}
                   initial={{ y: 28, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.08 + i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{
+                    delay: 0.08 + i * 0.06,
+                    duration: 0.45,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                   className="flex items-baseline gap-4 border-b border-hairline py-5"
                 >
                   <span className="font-display text-3xl font-black uppercase tracking-tight text-moonlight">
@@ -147,10 +159,10 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="btn btn-primary w-full"
               >
-                Start your mark →
+                Get a Free Quote
               </a>
               <p className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-asphalt">
-                Est. 2015 · Nationwide
+                Est. 2020 · Nationwide
               </p>
             </motion.div>
           </motion.div>
