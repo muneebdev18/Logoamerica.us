@@ -155,7 +155,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s7.jpg" },
+    asset: { type: "image", src: "/logos/logo-s7.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -165,7 +165,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s8.jpg" },
+    asset: { type: "image", src: "/logos/logo-s8.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s9.jpg" },
+    asset: { type: "image", src: "/logos/logo-s9.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -185,7 +185,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s10.jpg" },
+    asset: { type: "image", src: "/logos/logo-s10.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -195,7 +195,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s3.jpg" },
+    asset: { type: "image", src: "/logos/logo-s3.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -205,7 +205,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s4.jpg" },
+    asset: { type: "image", src: "/logos/logo-s4.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -215,7 +215,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s5.jpg" },
+    asset: { type: "image", src: "/logos/logo-s5.jpg" },
     accent: "#7fd4b1",
   },
   {
@@ -225,7 +225,7 @@ export const PROJECTS: Project[] = [
     scope: ["Wordmark", "Fleet Livery", "Rollout Program"],
     result: "38",
     resultLabel: "Markets unified under one identity in a single quarter",
-    asset: { type: "image", src: "/logos/Logo-s11.jpg" },
+    asset: { type: "image", src: "/logos/logo-s11.jpg" },
     accent: "#7fd4b1",
   },
 ];
