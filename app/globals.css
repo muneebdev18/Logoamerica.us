@@ -23,7 +23,7 @@
 
   --breakpoint-3xl: 110rem;
 
-  --animate-marquee: marquee 36s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
   --animate-blink: blink 1.6s steps(2, start) infinite;
   --animate-spin-slow: spin 14s linear infinite;
 
