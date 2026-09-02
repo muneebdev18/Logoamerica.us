@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             />
             <path d="M11 16.5h18M11 22h18M13 27.5h14" stroke="#0A1220" strokeWidth="2.6" strokeLinecap="round" />
           </svg> */}
-          <Image alt="OG Image" width={44} height={44} src={"/logo-hz.png"} />
+          <img alt="OG Image" width={44} height={44} src={"/logo-hz.png"} />
           Logo America —  Top Logo Design Company In Texas
         </div>
 
