@@ -2,8 +2,19 @@ import { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Refund Policy",
-  description: "Logo America's refund policy — our commitment to fair, transparent terms for brand identity services.",
+  title: "Refund Policy | Logo America",
+  description:
+    "Review Logo America's refund policy for brand identity services and packages — fair, transparent terms for custom creative work.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Refund Policy | Logo America",
+    description:
+      "Our commitment to fair, transparent refund terms for brand identity services.",
+    type: "website",
+  },
 };
 
 export default function RefundPolicy() {

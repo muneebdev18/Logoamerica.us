@@ -2,8 +2,19 @@ import { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Logo America's privacy policy — how we collect, use, and protect your information.",
+  title: "Privacy Policy | Logo America",
+  description:
+    "Read Logo America's privacy policy — how we collect, use, and protect your personal information when you visit our website or engage our brand identity services.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Privacy Policy | Logo America",
+    description:
+      "How Logo America collects, uses, and protects your information.",
+    type: "website",
+  },
 };
 
 export default function PrivacyPolicy() {

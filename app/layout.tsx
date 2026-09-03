@@ -29,11 +29,11 @@ const siteUrl = "https://www.logoamerica.us";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Logo America | Top Logo Design Company In Texas",
+    default: "Logo America | Professional Logo Design & Brand Identity Agency",
     template: "%s | Logo America",
   },
   description:
-    "Logo America is a premium brand identity studio in Texas, crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses across the United States. Fixed-scope pricing, full IP ownership.",
+    "Logo America is a premium brand identity studio crafting distinctive logos, complete brand systems, and strategic rebrands for growing businesses nationwide. Custom logo design, brand identity, rebranding, naming & verbal identity, motion logos, and brand guidelines. Fixed-scope pricing, full IP ownership.",
   keywords: [
     "logo design agency",
     "branding agency",
@@ -42,13 +42,23 @@ export const metadata: Metadata = {
     "company rebranding",
     "brand strategy",
     "visual identity design",
-    "trademark logo design",
+    "custom logo design",
     "logo design services",
     "brand design agency",
+    "naming agency",
+    "verbal identity",
+    "motion logo design",
+    "brand guidelines",
+    "trademark logo design",
   ],
   authors: [{ name: "Logo America" }],
   creator: "Logo America",
   publisher: "Logo America",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -68,11 +78,14 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Logo America — Brand Identity Studio",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@LogoAmerica",
+    creator: "@LogoAmerica",
     title: "Logo America | Professional Logo Design & Brand Identity Agency",
     description:
       "Premium logo design and brand identity for ambitious companies. Fixed-scope pricing, full IP ownership.",
@@ -92,12 +105,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  other: {
+    "google-site-verification": "your-google-verification-code",
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0a1220",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

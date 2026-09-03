@@ -2,8 +2,19 @@ import { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description: "Logo America's terms and conditions — governing your use of our website and brand identity services.",
+  title: "Terms & Conditions | Logo America",
+  description:
+    "Review Logo America's terms and conditions governing your use of our website and brand identity services, including IP ownership, payment terms, and dispute resolution.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Terms & Conditions | Logo America",
+    description:
+      "Terms governing your use of Logo America's website and brand identity services.",
+    type: "website",
+  },
 };
 
 export default function TermsConditions() {
