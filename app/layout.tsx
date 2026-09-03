@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Premium logo design and brand identity for ambitious companies. Strategy, design, and delivery — nationwide.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og.jpeg",
         width: 1200,
         height: 630,
         alt: "Logo America — Brand Identity Studio",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Logo America | Professional Logo Design & Brand Identity Agency",
     description:
       "Premium logo design and brand identity for ambitious companies. Fixed-scope pricing, full IP ownership.",
-    images: ["/og-image.png"],
+    images: ["/og.jpeg"],
   },
   robots: {
     index: true,
