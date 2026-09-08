@@ -126,34 +126,74 @@ export default function RootLayout({
       className={`${archivo.variable} ${publicSans.variable} ${instrument.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <meta name="facebook-domain-verification" content="8l7d71lftshlkyjm38cq4stbai7jng" />
-        <Script id="fb-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{
-          __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1053773370702642');fbq('track', 'PageView');`,
-        }} />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
+        <meta
+          name="facebook-domain-verification"
+          content="8l7d71lftshlkyjm38cq4stbai7jng"
+        />
+
+        {/* Meta / Facebook Pixel */}
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+
+              fbq('init', '1628397005511205');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+
         <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1053773370702642&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=1628397005511205&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
       </head>
+
       <body className="grain">
         {children}
+
+        {/* Tawk.to Chat */}
         <Script id="tawk-to" strategy="afterInteractive">
-          {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a8daefe722f0e344fc317ff/1k0sn74td';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();`}
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+              var s1=document.createElement("script"),
+                  s0=document.getElementsByTagName("script")[0];
+
+              s1.async=true;
+              s1.src='https://embed.tawk.to/6a8daefe722f0e344fc317ff/1k0sn74td';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
         </Script>
       </body>
     </html>

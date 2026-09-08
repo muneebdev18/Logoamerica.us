@@ -1,12 +1,22 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import LeadCta from "./LeadCta";
-import { TIERS, ADDONS, FAQS } from "@/lib/data";
+// import { TIERS, WEBSITE_TIERS, SEO_TIERS, ECOMMERCE_TIERS, PACKAGE_CATEGORIES } from "@/lib/data";
+import { TIERS, PACKAGE_CATEGORIES } from "@/lib/data";
 
 const CARD_HEIGHT = "580px";
+
+const CATEGORY_TIERS = {
+  logo: TIERS,
+  // website: WEBSITE_TIERS,
+  // seo: SEO_TIERS,
+  // ecommerce: ECOMMERCE_TIERS,
+} as const;
+
+type CategoryId = keyof typeof CATEGORY_TIERS;
 
 function FeatureList({ features, featured = false }: { features: string[]; featured?: boolean }) {
   const listRef = useRef<HTMLUListElement>(null);
@@ -87,6 +97,16 @@ function FeatureListDesktop({ features, featured = false }: { features: string[]
 }
 
 export default function Packages() {
+  const [activeCategory, setActiveCategory] = useState<CategoryId>("logo");
+  const currentTiers = CATEGORY_TIERS[activeCategory];
+
+  const categoryLead = {
+    logo: "Fixed-scope pricing, quoted upfront. Every package delivers a logo you own outright — no licensing, no hidden fees.",
+    website: "Performance-focused websites built to convert. Clean code, fast Core Web Vitals, and full ownership — no monthly platform fees.",
+    seo: "Search strategies that compound. Technical excellence, content that ranks, and links that build authority — all measured by revenue impact.",
+    ecommerce: "Online stores that sell. Beautiful design, frictionless checkout, and the integrations you need to scale — on platforms you own.",
+  };
+
   return (
     <section id="packages" className="relative scroll-mt-20 py-12 sm:py-20">
       {/* ambient glow */}
@@ -101,13 +121,38 @@ export default function Packages() {
           eyebrow="Packages"
           align="center"
           lines={["Choose your tier.", "We'll handle the rest."]}
-          lead="Fixed-scope pricing, quoted upfront. Every package delivers a logo you own outright — no licensing, no hidden fees."
+          lead={categoryLead[activeCategory]}
         />
 
+        {/* Category Tabs */}
+        <nav
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2"
+          role="tablist"
+          aria-label="Package categories"
+        >
+          {PACKAGE_CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              role="tab"
+              aria-selected={activeCategory === cat.id}
+              aria-controls={`panel-${cat.id}`}
+              id={`tab-${cat.id}`}
+              onClick={() => setActiveCategory(cat.id as CategoryId)}
+              className={`btn-transition relative px-5 py-2.5 sm:px-6 sm:py-3 font-mono text-[11px] sm:text-[12px] uppercase tracking-[0.2em] rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-taillight focus-visible:ring-offset-2 focus-visible:ring-offset-midnight ${
+                activeCategory === cat.id
+                  ? "bg-taillight text-white shadow-[0_8px_24px_-6px_rgba(255,64,48,0.5)]"
+                  : "bg-panel text-asphalt/70 hover:text-moonlight hover:bg-deep/50"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </nav>
+
         {/* Mobile: horizontal scroll carousel */}
-        <div className="xl:hidden">
-          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6  px-6 scrollbar-none" style={{ WebkitOverflowScrolling: "touch" }}>
-            {TIERS.map((tier) => (
+        <div className="xl:hidden" role="tabpanel" id={`panel-${activeCategory}`} aria-labelledby={`tab-${activeCategory}`}>
+          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 px-6 scrollbar-none" style={{ WebkitOverflowScrolling: "touch" }}>
+            {currentTiers.map((tier) => (
               <article
                 key={tier.name}
                 className={`group snap-start flex-none w-[88vw] max-w-[360px] relative flex flex-col gap-6 rounded-3xl p-6 sm:p-7 transition-all duration-500 ${
@@ -157,8 +202,8 @@ export default function Packages() {
         </div>
 
         {/* Desktop: grid */}
-        <div className="hidden xl:grid gap-6 xl:grid-cols-4">
-          {TIERS.map((tier, i) => (
+        <div className="hidden xl:grid gap-6 xl:grid-cols-4" role="tabpanel" id={`panel-${activeCategory}`} aria-labelledby={`tab-${activeCategory}`}>
+          {currentTiers.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 0.09} y={48} className="h-full">
               <article
                 className={`group relative flex flex-col gap-7 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${
@@ -202,33 +247,6 @@ export default function Packages() {
             </Reveal>
           ))}
         </div>
-
-        {/* FAQ */}
-        {/* <Reveal className="mx-auto w-full max-w-3xl pt-12 sm:pt-20">
-          <SectionHeading
-            exit="05"
-            eyebrow="Questions"
-            align="center"
-            lines={["Frequently Asked", "Questions"]}
-            lead=""
-          />
-          <div className="flex mt-15 mx-auto w-full sm:w-[70%] flex-col divide-y divide-hairline rounded-2xl border border-hairline bg-deep/40">
-            {FAQS.map((faq) => (
-              <details key={faq.q} className="group px-5 py-5 sm:px-6 sm:py-6 [&_summary]:list-none">
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-left font-medium text-moonlight marker:hidden text-base">
-                  {faq.q}
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-taillight transition-transform duration-300 group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="pt-4 text-sm leading-relaxed text-asphalt">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </Reveal> */}
       </div>
     </section>
   );
