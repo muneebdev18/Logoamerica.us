@@ -36,7 +36,7 @@ export default function RefundPolicy() {
           <article>
             <h2 className="display-md mb-4">1. Overview</h2>
             <div className="space-y-4 text-asphalt leading-relaxed">
-              <p>Logo America provides custom creative services — including logo design, brand identity systems, strategic rebranding, naming, motion logos, and brand guidelines. Because these services involve significant upfront strategy, research, and creative work tailored specifically to each client, our refund terms differ from standard product returns.</p>
+              <p>Logo America provides custom creative services including logo design, brand identity systems, strategic rebranding, naming, motion logos, and brand guidelines. Because these services involve significant upfront strategy, research, and creative work tailored specifically to each client, our refund terms differ from standard product returns.</p>
               <p>By engaging our services, you acknowledge that you are commissioning custom creative work, not purchasing an off-the-shelf product.</p>
             </div>
           </article>
@@ -58,7 +58,7 @@ export default function RefundPolicy() {
               <p>Refunds are calculated based on the total package price and the phase at which cancellation occurs.</p>
 
               <h3 className="font-display text-lg font-semibold text-moonlight mt-4">2.3 Revision Rounds</h3>
-              <p>Each package includes a defined number of revision rounds. Additional revisions beyond the included amount are billed at $150/round. Refunds are not issued for dissatisfaction with creative direction after included revisions are exhausted — we continue refining until the work meets the agreed brief.</p>
+              <p>Each package includes a defined number of revision rounds. Additional revisions beyond the included amount are billed at $150/round. Refunds are not issued for dissatisfaction with creative direction after included revisions are exhausted we continue refining until the work meets the agreed brief.</p>
             </div>
           </article>
 
@@ -91,7 +91,7 @@ export default function RefundPolicy() {
                 <li>Provide one additional concept round at no charge (beyond package inclusions)</li>
                 <li>If still unresolved, offer a prorated refund based on phase completion (per Section 2.2 or 3)</li>
               </ul>
-              <p>This guarantee applies only when the client has provided timely, specific feedback at each stage and the work demonstrably fails to meet the agreed brief — not for subjective preference changes.</p>
+              <p>This guarantee applies only when the client has provided timely, specific feedback at each stage and the work demonstrably fails to meet the agreed brief not for subjective preference changes.</p>
             </div>
           </article>
 

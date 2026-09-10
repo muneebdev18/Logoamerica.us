@@ -19,7 +19,7 @@ export default function Contact() {
             </h2>
             <p className="mt-3 sm:mt-4 max-w-md text-base sm:text-lg leading-relaxed text-asphalt md:text-xl">
               Three quick steps and you&rsquo;re on your way. Within one
-              business day a senior partner replies — not a sales rep, not a
+              business day a senior partner replies not a sales rep, not a
               chatbot.
             </p>
           </Reveal>

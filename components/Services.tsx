@@ -73,7 +73,7 @@ export default function Services() {
           />
           <Reveal delay={0.1} className="self-end">
             <p className="text-lg leading-relaxed text-moonlight md:text-xl lg:text-2xl">
-            From a single logo to a full rebrand, our senior team handles every aspect of brand identity in-house. No outsourcing — just experienced designers delivering work built to perform at every touchpoint.
+            From a single logo to a full rebrand, our senior team handles every aspect of brand identity in-house. No outsourcing just experienced designers delivering work built to perform at every touchpoint.
             </p>
           </Reveal>
         </div>

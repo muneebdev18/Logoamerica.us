@@ -34,7 +34,7 @@ export default function ContactForm() {
           Brief received<span className="text-taillight">.</span>
         </h3>
         <p className="max-w-sm text-sm leading-relaxed text-asphalt">
-          Thanks, {fields.name.split(" ")[0] || "friend"} — your brief is on our
+          Thanks, {fields.name.split(" ")[0] || "friend"} your brief is on our
           desk. A senior partner replies within one business day.
         </p>
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-asphalt/70">
@@ -127,7 +127,7 @@ export default function ContactForm() {
               className="absolute inset-0 flex flex-col gap-5"
             >
               <p className="text-[15px] leading-relaxed text-asphalt/90">
-                First, who&rsquo;s asking — so we know who we&rsquo;re talking to.
+                First, who&rsquo;s asking so we know who we&rsquo;re talking to.
               </p>
 <label className="flex flex-col gap-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-moonlight/65">
                   Name

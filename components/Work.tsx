@@ -203,7 +203,7 @@ export default function Work() {
             lines={["Portfolio of", "recent partnerships."]}
           />
           <p className="hidden max-w-xs text-sm leading-relaxed text-asphalt lg:block">
-            Four brands, four industries — measured by what happened after launch.
+            Four brands, four industries measured by what happened after launch.
           </p>
         </div>
 

@@ -193,7 +193,7 @@ export default function LeadModal() {
                   Brief received<span className="text-taillight">.</span>
                 </h3>
                 <p className="max-w-xs text-[13px] leading-relaxed text-asphalt">
-                  Thanks, {fields.name.split(" ")[0] || "friend"} — your request is on our
+                  Thanks, {fields.name.split(" ")[0] || "friend"} your request is on our
                   desk. A senior partner will reach you within one business day.
                 </p>
                 <button type="button" onClick={close} className="btn btn-ghost py-3">
@@ -211,7 +211,7 @@ export default function LeadModal() {
                   Get A Free Quote<span className="text-taillight">.</span>
                   </h3>
                   <p className="text-[13px] leading-relaxed text-asphalt">
-                    Tell us where your brand is headed — a senior partner replies
+                    Tell us where your brand is headed a senior partner replies
                     within one business day.
                   </p>
                 </div>
@@ -329,7 +329,7 @@ export default function LeadModal() {
                   </button>
 
                   <p className="text-center text-[10px] leading-relaxed text-asphalt/70">
-                    No spam, no cold calls — just a reply from a partner within one
+                    No spam, no cold calls just a reply from a partner within one
                     business day.
                   </p>
                 </form>

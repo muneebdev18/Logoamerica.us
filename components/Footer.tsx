@@ -60,7 +60,7 @@ export default function Footer() {
             
           </a>
           <p className="max-w-xs text-sm leading-relaxed text-asphalt">
-            The brand identity studio behind logos that work everywhere — from app icons to billboards, for the next twenty years.
+            The brand identity studio behind logos that work everywhere from app icons to billboards, for the next twenty years.
           </p>
           <div className="flex flex-col gap-2 mt-4 font-mono text-[14px] font-bold text-asphalt">
             <a href="tel:+12819539004" className="flex items-center gap-2 transition-colors hover:text-centerline">
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
           <div className="max-w-xs">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-asphalt">
-              Monthly insights — one email, no spam
+              Monthly insights one email, no spam
             </p>
             {subscribed ? (
               <p className="flex items-center gap-2 text-sm text-centerline" role="status">
