@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       "Our commitment to fair, transparent refund terms for brand identity services.",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.logoamerica.us/refund-policy",
+  },
 };
 
 export default function RefundPolicy() {

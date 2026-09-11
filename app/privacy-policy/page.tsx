@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       "How Logo America collects, uses, and protects your information.",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.logoamerica.us/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

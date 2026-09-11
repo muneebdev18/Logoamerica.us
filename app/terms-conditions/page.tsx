@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       "Terms governing your use of Logo America's website and brand identity services.",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.logoamerica.us/terms-conditions",
+  },
 };
 
 export default function TermsConditions() {

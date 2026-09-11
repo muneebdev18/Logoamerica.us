@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
 import RouteRail from "@/components/RouteRail";
@@ -171,6 +172,12 @@ const aggregateRatingSchema = {
 };
 
 const jsonLd = [organizationSchema, websiteSchema, serviceSchema, aggregateRatingSchema];
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.logoamerica.us/",
+  },
+};
 
 export default function Home() {
   return (
