@@ -315,7 +315,7 @@ export default function Hero() {
         </p> */}
 
         <h1 className="display-xl max-w-[16ch]">
-          {word("Logo Design ")}
+          {word("Logo America ")}
           <br />
           {word("Agency", "serif-accent !normal-case text-taillight")}{" "}
           {word("Built for", "text-outline")} {word("Growth.")}
