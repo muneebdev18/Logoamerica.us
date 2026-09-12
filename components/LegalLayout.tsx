@@ -36,7 +36,7 @@ export default function LegalLayout({ children }: LegalLayoutProps) {
 
   return (
     <>
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <Nav />
       <RouteRail />
       <Cursor />
