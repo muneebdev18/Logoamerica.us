@@ -204,7 +204,7 @@ export default function LeadModal() {
               <div className="flex flex-col gap-5 px-6 py-5">
                 <div className="flex flex-col gap-1.5">
                   <p className="eyebrow text-[0.7rem]">
-                    <img src="/logo-hz.png" alt="" className="h-4 w-4 object-contain" />
+                    <img src="/logo-updated.png" alt="" className="h-4 w-4 object-contain" />
                     Free strategy call
                   </p>
                   <h3 id="lead-modal-title" className="display-md text-lg md:text-xl">

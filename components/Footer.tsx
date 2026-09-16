@@ -56,7 +56,7 @@ export default function Footer() {
       <div className="shell grid gap-10 sm:gap-12 py-14 sm:py-16 md:grid-cols-12">
         <div className="flex flex-col gap-4 md:col-span-5">
           <a href="#top" className="flex w-fit items-center gap-3" aria-label="Logo America — back to top">
-            <img src="/logo-hz.png" alt="Logo America" className="h-12 w-auto object-contain sm:h-16 md:h-20 lg:h-26.25" />
+            <img src="/logo-updated.png" alt="Logo America" className="h-12 w-auto object-contain sm:h-16 md:h-20 lg:h-26.25" />
             
           </a>
           <p className="max-w-xs text-sm leading-relaxed text-asphalt">

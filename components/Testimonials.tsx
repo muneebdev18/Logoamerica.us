@@ -67,7 +67,7 @@ export default function Testimonials() {
                 </p>
                 <footer className="flex flex-col items-center gap-2">
                   <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-centerline">
-                    <img src="/logo-hz.png" alt="" className="h-4 w-4 object-contain" />
+                    <img src="/logo-updated.png" alt="" className="h-4 w-4 object-contain" />
                     {t.name}
                   </span>
                   <span className="text-sm text-asphalt">

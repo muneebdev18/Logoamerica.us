@@ -23,7 +23,7 @@ const organizationSchema = {
   name: "Logo America",
   alternateName: "Logo America LLC",
   url: "https://www.logoamerica.us",
-  logo: "https://www.logoamerica.us/logo-hz.png",
+  logo: "https://www.logoamerica.us/logo-updated.png",
   email: "contact@logoamerica.us",
   telephone: "+1-281-953-9004",
   description:
@@ -56,7 +56,7 @@ const organizationSchema = {
   brand: {
     "@type": "Brand",
     name: "Logo America",
-    logo: "https://www.logoamerica.us/logo-hz.png",
+    logo: "https://www.logoamerica.us/logo-updated.png",
   },
 };
 

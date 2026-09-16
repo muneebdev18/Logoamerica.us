@@ -46,7 +46,7 @@ export default function Nav() {
             aria-label="Logo America — back to top"
           >
             <img
-              src="/logo-hz.png"
+              src="/logo-updated.png"
               alt="Logo America"
               className="h-[75px] sm:h-[95px] w-auto object-contain sm:h-16"
             />
