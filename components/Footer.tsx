@@ -125,7 +125,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Legal" className="sm:col-span-1 md:col-span-2">
+        <nav aria-label="Legal" className="sm:col-span-1 md:col-span-1">
           <h3 className="eyebrow mb-4 sm:mb-5">Legal</h3>
           <ul className="flex flex-col gap-3">
             {[
@@ -145,7 +145,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Services" className="sm:col-span-1 md:col-span-3">
+        <nav aria-label="Services" className="sm:col-span-1 md:col-span-2">
           <h3 className="eyebrow mb-4 sm:mb-5">Services</h3>
           <ul className="flex flex-col gap-3">
             {SERVICES.map((s) => (
@@ -158,16 +158,17 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2">
+        <nav aria-label="Social Media" className="sm:col-span-1 md:col-span-2">
           <h3 className="eyebrow mb-4 sm:mb-5">Follow</h3>
-          {["LinkedIn", "Instagram", "Dribbble", "Behance"].map((social) => (
+          {[{name:"Facebook",link:"https://www.facebook.com/profile.php?id=61593520032583"}, {name:"Instagram",link:"https://www.instagram.com/logoamericaus/"}, {name:"X (Twitter)",link:"https://www.x.com/"}].map((social) => (
             <a
-              key={social}
-              href="#top"
+              key={social.name}
+              href={social.link}
               rel="noopener noreferrer"
-              className="group flex w-fit items-center gap-2 text-sm text-asphalt transition-colors hover:text-moonlight"
+              target="_blank"
+              className="mb-[15px] group flex w-fit items-center gap-2 text-sm text-asphalt transition-colors hover:text-moonlight"
             >
-              {social}
+              {social.name}
               <span
                 aria-hidden="true"
                 className="opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
@@ -176,8 +177,7 @@ export default function Footer() {
               </span>
             </a>
           ))}
-         
-        </div> */}
+        </nav>
       </div>
 
       {/* Giant wordmark */}

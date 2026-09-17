@@ -15,7 +15,7 @@ const SERVICE_OPTIONS = [
 
 const TIMELINES = ["ASAP", "1–3 months", "3–6 months", "Flexible"] as const;
 
-const BUDGETS = ["< $5k", "$5k – $15k", "$15k – $50k", "$50k+"] as const;
+const BUDGETS = ["< $50", "$300 – $500", "$1k – $1k", "$2k+"] as const;
 
 export type Fields = {
   name: string;
