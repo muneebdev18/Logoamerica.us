@@ -15,7 +15,7 @@ const TRUST_PLATFORMS = [
   { 
     name: "Trustpilot", 
     score: "5.0", 
-    href: "https://www.trustpilot.com/review/logoamerica.agency", 
+    href: "https://www.trustpilot.com/review/logoamerica.us", 
     logoSrc: "/Trustpilot.png",
     color: "#00b67a" 
   },
