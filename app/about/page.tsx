@@ -56,7 +56,7 @@ const aboutSchema = {
 
 const WORK = [
   {
-    src: "/P12.jpg",
+    src: "/P2.jpeg",
     alt: "Crimzon brand identity system — wordmark, palette, and applications",
     client: "Crimzon",
     meta: "Symbol · Accessible Palette · Signage Suite · 2024",
