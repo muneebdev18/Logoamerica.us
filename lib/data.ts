@@ -6,11 +6,12 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services", exit: "01" },
-  { label: "Work", href: "#work", exit: "02" },
-  { label: "Process", href: "#process", exit: "03" },
-  { label: "About", href: "#studio", exit: "04" },
-  { label: "Packages", href: "#packages", exit: "05" },
+  { label: "Home", href: "/", exit: "00" },
+  { label: "About", href: "/about", exit: "04" },
+  { label: "Services", href: "/services", exit: "01" },
+  { label: "Packages", href: "/packages", exit: "05" },
+  { label: "Contact Us", href: "/contact", exit: "02" },
+  // { label: "Process", href: "/#process", exit: "03" },
 ] as const;
 
 export const TOTAL_MILES = 2789; // NYC → Los Angeles
@@ -285,6 +286,86 @@ export const STATS = [
 
 export const MANIFESTO =
   "A logo is not decoration. It is the shortest story your company will ever tell — read in a glance, remembered for years. We design marks that carry that weight.";
+
+export type Value = {
+  index: string;
+  title: string;
+  body: string;
+};
+
+export const VALUES: Value[] = [
+  {
+    index: "01",
+    title: "Strategy before sketches",
+    body: "We align on the story your mark must tell and establish the criteria every concept will be measured against — so decisions stay objective and the work solves a real business problem.",
+  },
+  {
+    index: "02",
+    title: "Senior hands, in-house",
+    body: "From a single logo to a full rebrand, our senior team handles every aspect of brand identity in-house. No outsourcing — just experienced designers delivering work built to perform at every touchpoint.",
+  },
+  {
+    index: "03",
+    title: "Three routes, not variations",
+    body: "You review three distinct strategic routes live and in context — on signage, digital products, merchandise, and stationery — never as static PDFs handed over weeks later.",
+  },
+  {
+    index: "04",
+    title: "Built to be used",
+    body: "Practical, accessible brand books your team will actually use: organized file structures, usage rules, and downloadable asset libraries built for real-world workflows, not shelf display.",
+  },
+  {
+    index: "05",
+    title: "You own it outright",
+    body: "Full IP transfer upon final payment, in writing. No licensing traps, no usage fees, no fine print — the work is yours, no strings attached.",
+  },
+  {
+    index: "06",
+    title: "Fixed-scope pricing",
+    body: "Fixed-scope pricing, quoted upfront. Every engagement delivers work you own outright — no licensing, no hidden fees, and never a charge for a phone call.",
+  },
+];
+
+export type Differentiator = {
+  index: string;
+  title: string;
+  body: string;
+};
+
+export const DIFFERENT: Differentiator[] = [
+  {
+    index: "01",
+    title: "The names on the door are the names in the Slack channel",
+    body: "You work directly with the senior team that designs your identity — from the first call to the final file handoff. No account layers, no handoffs to junior staff.",
+  },
+  {
+    index: "02",
+    title: "Concepts presented live, in context",
+    body: "Every direction is shown on signage, products, merchandise, and screens during a working session — so you judge the mark where it will actually live, not on a flat PDF.",
+  },
+  {
+    index: "03",
+    title: "Accessibility shaped from day one",
+    body: "Our identities are stress-tested at 16 pixels and 16 feet, in full color and single color — clarity and contrast built in from the first sketch, never patched in later.",
+  },
+  {
+    index: "04",
+    title: "Guidelines written for practitioners",
+    body: "A guideline book your team will actually open: usage rules, do's and don'ts, organized files, and a downloadable asset library your developers will thank you for.",
+  },
+  {
+    index: "05",
+    title: "30 days of post-launch support",
+    body: "Delivery is not the finish line. Every complete file suite ships with a guideline book and a month of post-launch support to keep the rollout clean.",
+  },
+];
+
+export const COMPANY_FACTS = [
+  { label: "Founded", value: "2020" },
+  { label: "Studios", value: "New York · Los Angeles" },
+  { label: "Hours", value: "Mon–Fri · 9–6 ET / 9–6 PT" },
+  { label: "Area served", value: "Nationwide — every time zone" },
+] as const;
 
 export const CLIENTS = [
   "Meridian Financial",

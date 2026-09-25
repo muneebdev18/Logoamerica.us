@@ -7,8 +7,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 /**
  * Splits text into words wrapped in mask spans, then reveals them
  * with a staggered rise when scrolled into view.
- * Inline markup: *word* → outlined display, ~word~ → serif italic accent.
+ * Inline markup: *…* → outlined display, ~…~ → serif italic accent.
+ * Markers may wrap a single word or a whole phrase.
  */
+
+type Token = { word: string; kind: "plain" | "outline" | "serif" };
+
+function tokenize(text: string): Token[] {
+  const out: Token[] = [];
+  const re = /\*([^*]+)\*|~([^~]+)~|([^*~]+)/g;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(text)) !== null) {
+    const kind: Token["kind"] =
+      match[1] !== undefined ? "outline" : match[2] !== undefined ? "serif" : "plain";
+    const chunk = match[1] ?? match[2] ?? match[3] ?? "";
+    for (const word of chunk.split(/\s+/)) {
+      if (word) out.push({ word, kind });
+    }
+  }
+  return out;
+}
+
 export default function SplitWords({
   text,
   className = "",
@@ -72,30 +91,26 @@ export default function SplitWords({
     return () => ctx.revert();
   }, [text, delay, stagger, scrub]);
 
-  const words = text.split(" ");
+  const tokens = tokenize(text);
   return (
     <Tag ref={ref as never} className={className} aria-label={text.replace(/[*~]/g, "")}>
-      {words.map((raw, i) => {
-        const outline = raw.startsWith("*") && raw.endsWith("*");
-        const serif = raw.startsWith("~") && raw.endsWith("~");
-        const word = raw.replace(/[*~]/g, "");
-        return (
+      {tokens.map(({ word, kind }, i) => (
+        <span
+          key={i}
+          aria-hidden="true"
+          className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] align-bottom"
+        >
           <span
-            key={i}
-            aria-hidden="true"
-            className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] align-bottom"
+            data-w
+            className={`inline-block will-change-transform ${
+              kind === "outline" ? "text-outline" : ""
+            } ${kind === "serif" ? "serif-accent text-taillight" : ""}`}
           >
-            <span
-              data-w
-              className={`inline-block will-change-transform ${
-                outline ? "text-outline" : ""
-              } ${serif ? "serif-accent text-taillight" : ""}`}
-            >
-              {word}</span>
-            {i < words.length - 1 ? "\u00A0" : ""}
+            {word}
           </span>
-        );
-      })}
+          {i < tokens.length - 1 ? "\u00A0" : ""}
+        </span>
+      ))}
     </Tag>
   );
 }

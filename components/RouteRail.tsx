@@ -35,7 +35,11 @@ export default function RouteRail() {
         const dots = dotsWrapRef.current?.children;
         if (dots) {
           for (let i = 0; i < dots.length; i++) {
-            const section = document.querySelector(NAV_LINKS[i].href);
+            const href = NAV_LINKS[i]?.href ?? "";
+            // Normalise "/#section" → "#section"; skip links that point at other routes
+            const selector = href.startsWith("/#") ? href.slice(1) : href;
+            if (!selector.startsWith("#")) continue;
+            const section = document.querySelector(selector);
             if (!section || !dots[i]) continue;
             const passed = section.getBoundingClientRect().top < window.innerHeight * 0.5;
             dots[i].children[0]?.classList.toggle("bg-centerline", passed);

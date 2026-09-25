@@ -34,11 +34,18 @@ export default function SmoothScroll({
 
     // Anchor links route through Lenis for buttery jumps
     const onClick = (e: MouseEvent) => {
-      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>(
+        'a[href*="#"]'
+      );
       if (!anchor) return;
-      const id = anchor.getAttribute("href");
-      if (!id || id === "#") return;
-      const el = document.querySelector(id);
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+      const hash = href.slice(href.indexOf("#") + 1);
+      if (!hash) return;
+      // Cross-route links (e.g. "/#work" from /about) fall through to the browser
+      const path = href.slice(0, href.indexOf("#"));
+      if (path && path !== window.location.pathname) return;
+      const el = document.getElementById(hash);
       if (!el) return;
       e.preventDefault();
       lenis.scrollTo(el as HTMLElement, { offset: -72 });

@@ -1,87 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import Counter from "./Counter";
+import Manifesto from "./Manifesto";
 import { STATS, MANIFESTO } from "@/lib/data";
 
-function Counter({
-  value,
-  prefix = "",
-  suffix = "",
-}: {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      el.textContent = `${prefix}${value}${suffix}`;
-      return;
-    }
-    const target = { v: 0 };
-    gsap.registerPlugin(ScrollTrigger);
-    const tween = gsap.to(target, {
-      v: value,
-      duration: 1.8,
-      ease: "power2.out",
-      scrollTrigger: { trigger: el, start: "top 90%", once: true },
-      onUpdate: () => {
-        el.textContent = `${prefix}${Math.round(target.v)}${suffix}`;
-      },
-    });
-    return () => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-    };
-  }, [value, prefix, suffix]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {prefix}0{suffix}
-    </span>
-  );
-}
-
 export default function Studio() {
-  const manifestoRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const el = manifestoRef.current;
-    if (!el) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      gsap.set(el.children, { opacity: 1 });
-      return;
-    }
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el.children,
-        { opacity: 0.13 },
-        {
-          opacity: 1,
-          stagger: 0.05,
-          ease: "none",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 78%",
-            end: "bottom 45%",
-            scrub: 0.4,
-          },
-        }
-      );
-    }, el);
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section id="studio" className="relative scroll-mt-20 py-12 sm:py-20">
       <div className="shell flex flex-col gap-12 sm:gap-16">
@@ -92,17 +17,10 @@ export default function Studio() {
             lines={["Founded in 2020.", "Operating", "nationwide."]}
           />
           <div className="flex flex-col gap-8 self-end">
-            <p
-              ref={manifestoRef}
+            <Manifesto
+              text={MANIFESTO}
               className="text-lg leading-relaxed text-moonlight md:text-xl md:leading-relaxed lg:text-2xl"
-            >
-              {MANIFESTO.split(" ").map((word, i) => (
-                <span key={i} className="inline-block">
-                  {word}
-                  {"\u00A0"}
-                </span>
-              ))}
-            </p>
+            />
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-asphalt md:text-xl">
                 Nine years and 85 launches later, we operate from New York and

@@ -111,8 +111,8 @@ export default function Footer() {
         <nav aria-label="Footer sitemap" className="sm:col-span-1 md:col-span-2">
           <h3 className="eyebrow mb-4 sm:mb-5">Quick Links</h3>
           <ul className="flex flex-col gap-3">
-            {[...NAV_LINKS, { label: "Contact", href: "#contact", exit: "06" }].map((link) => (
-              <li key={link.href}>
+            {[...NAV_LINKS, { label: "Contact", href: "/contact", exit: "06" }].map((link) => (
+              <li key={link.exit}>
                 <a
                   href={link.href}
                   className="group flex items-center gap-2 text-sm text-asphalt transition-colors hover:text-moonlight"
@@ -150,7 +150,10 @@ export default function Footer() {
           <ul className="flex flex-col gap-3">
             {SERVICES.map((s) => (
               <li key={s.index}>
-                <a href="#services" className="text-sm text-asphalt transition-colors hover:text-moonlight">
+                <a
+                  href={`/services#service-${s.index}`}
+                  className="text-sm text-asphalt transition-colors hover:text-moonlight"
+                >
                   {s.title}
                 </a>
               </li>

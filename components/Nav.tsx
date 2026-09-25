@@ -7,6 +7,7 @@ import Magnetic from "./Magnetic";
 import { NAV_LINKS } from "@/lib/data";
 import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 import { Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,8 +41,8 @@ export default function Nav() {
           animate={{ width: headerWidth }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <a
-            href="#top"
+          <Link
+            href="/"
             className="group flex items-center gap-2.5"
             aria-label="Logo America — back to top"
           >
@@ -50,20 +51,20 @@ export default function Nav() {
               alt="Logo America"
               className="h-[75px] sm:h-[95px] w-auto object-contain sm:h-16"
             />
-          </a>
+          </Link>
 
           <nav
             aria-label="Primary"
             className="hidden items-center gap-8 lg:flex"
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="group font-bold text-[13px] uppercase tracking-[0.2em] text-asphalt transition-colors hover:text-moonlight"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
