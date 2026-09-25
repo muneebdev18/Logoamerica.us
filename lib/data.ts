@@ -6,7 +6,7 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/", exit: "00" },
+  { label: "Home", href: "/", exit: "001" },
   { label: "About", href: "/about", exit: "04" },
   { label: "Services", href: "/services", exit: "01" },
   { label: "Packages", href: "/packages", exit: "05" },
